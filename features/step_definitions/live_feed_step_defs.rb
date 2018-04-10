@@ -3,23 +3,23 @@ Before do
 end
 
 Given("I am on Google's search page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  google_search.visit_google
 end
 
 When('I search "Abbey Road Crossing"') do
-  pending # Write code here that turns the phrase above into concrete actions
+  google_search.fill_search_field "Abbey Road Crossing"
 end
 
 When('I search "Abbey Road Studios"') do
-  pending # Write code here that turns the phrase above into concrete actions
+  google_search.fill_search_field "Abbey Road Studios"
 end
 
-When("I click the link Visit Abbey Road Studios") do
-  pending # Write code here that turns the phrase above into concrete actions
+When('I click the link "Visit Abbey Road Studios"') do
+  google_search.click_search_result "Visit Abbey Road Studios"
 end
 
 Then("I am redirected to the Live Feed Page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(ar_live_feed.this_url).to eq("https://www.abbeyroad.com/crossing")
 end
 
 Given("I am on the Live Feed Page") do
