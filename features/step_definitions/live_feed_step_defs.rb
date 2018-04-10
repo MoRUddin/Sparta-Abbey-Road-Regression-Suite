@@ -23,11 +23,11 @@ Then("I am redirected to the Live Feed Page") do
 end
 
 Given("I am on the Live Feed Page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  ar_live_feed.visit_live_feed
 end
 
 When("I click one of the time tabs") do
-  pending # Write code here that turns the phrase above into concrete actions
+  ar_live_feed.click_nth_time_tab 9
 end
 
 Then("the feed plays from that selected point") do
