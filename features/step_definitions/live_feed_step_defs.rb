@@ -36,11 +36,11 @@ Then("the feed plays from that selected point") do
 end
 
 When("I click the live time tab") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @live_feed.get_time_tabs.last.click
 end
 
 Then("the feed plays from live") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@live_feed.get_live_status).to include "LIVE"
 end
 
 Given("I am on Abbey Road's homepage") do

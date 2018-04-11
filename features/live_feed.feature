@@ -1,20 +1,20 @@
 Feature: Live Feed
-  # Scenario: As a User, I can go to the Visit Us page using a link from Google, so that I can reach the crossing feed directly.
-  #   Given I am on Google's search page
-  #   When I search "Abbey Road Crossing"
-  #     And I click the link "Visit Abbey Road Studios"
-  #   Then I am redirected to the Live Feed Page
+  Scenario: As a User, I can go to the Visit Us page using a link from Google, so that I can reach the crossing feed directly.
+    Given I am on Google's search page
+    When I search "Abbey Road Crossing"
+      And I click the link "Visit Abbey Road Studios"
+    Then I am redirected to the Live Feed Page
 
   Scenario: As a User, I can click on any archived time, so that I can see a video starting from that point.
     Given I am on the Live Feed Page
     When I click one of the time tabs
     Then the feed plays from that selected point
-  #
-  # Scenario: As a User, I can click on live, so that I can see a video starting from that point.
-  #   Given I am on the Live Feed Page
-  #     And I click one of the time tabs
-  #   When I click the live time tab
-  #   Then the feed plays from live
+
+  Scenario: As a User, I can click on live, so that I can see a video starting from that point.
+    Given I am on the Live Feed Page
+      And I click one of the time tabs
+    When I click the live time tab
+    Then the feed plays from live
 
   # Scenario: As a User, I can go to the homepage directly and navigate to the Live Feed by Visit Us so that I can view the crossing feed.
   #   Given I am on Abbey Road's homepage
