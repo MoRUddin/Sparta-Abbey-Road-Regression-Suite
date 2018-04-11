@@ -1,5 +1,5 @@
 Before do
-
+  @live_feed = ar_live_feed
 end
 
 Given("I am on Google's search page") do
@@ -19,18 +19,27 @@ When('I click the link "Visit Abbey Road Studios"') do
 end
 
 Then("I am redirected to the Live Feed Page") do
-  expect(ar_live_feed.this_url).to eq("https://www.abbeyroad.com/crossing")
+  expect(@live_feed.this_url).to eq("https://www.abbeyroad.com/crossing")
 end
 
 Given("I am on the Live Feed Page") do
-  ar_live_feed.visit_live_feed
+  @live_feed.visit_live_feed
 end
 
 When("I click one of the time tabs") do
-  ar_live_feed.click_nth_time_tab 9
+  @random_tab = @live_feed.random_tab_selector
+  @live_feed.get_nth_time(@random_tab).click
 end
 
 Then("the feed plays from that selected point") do
+  expect(@live_feed.convert_to_time(@live_feed.get_current_video_time)).to be_between(@live_feed.convert_to_time(@live_feed.get_nth_time(@random_tab).text),@live_feed.convert_to_time(@live_feed.get_nth_time(@random_tab+1).text))
+end
+
+When("I click the live time tab") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("the feed plays from live") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
