@@ -60,7 +60,7 @@ Then("I am redirected to the Homepage") do
 end
 
 Then("that tab turn red") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@live_feed.get_selected_time_colour).to eq "rgba(215, 25, 32, 1)"
 end
 
 Then("it should be defaulted to the live feed") do

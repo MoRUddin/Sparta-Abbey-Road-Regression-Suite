@@ -9,6 +9,7 @@ class AbbeyRoadLiveFeed
   TIME_TAB_LIST = "div.archive-times"
   CURRENT_VIDEO_TIME_CLASS = "div.vjs-time-tooltip"
   LIVE_VIDEO_TEXT = "div.vjs-live-display"
+  SELECTED_CLASS = "a.selected"
 
   def this_url
     current_url
@@ -40,5 +41,7 @@ class AbbeyRoadLiveFeed
   def get_live_status
     find(LIVE_VIDEO_TEXT).text
   end
-
+  def get_selected_time_colour
+    find(SELECTED_CLASS).native.css_value('background-color')
+  end
 end
