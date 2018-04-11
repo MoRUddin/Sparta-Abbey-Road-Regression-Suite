@@ -1,21 +1,23 @@
 Before do
   @live_feed = ar_live_feed
+  @homepage = ar_hompage
+  @google = google_search
 end
 
 Given("I am on Google's search page") do
-  google_search.visit_google
+  @google.visit_google
 end
 
 When('I search "Abbey Road Crossing"') do
-  google_search.fill_search_field "Abbey Road Crossing"
+  @google.fill_search_field "Abbey Road Crossing"
 end
 
 When('I search "Abbey Road Studios"') do
-  google_search.fill_search_field "Abbey Road Studios"
+  @google.fill_search_field "Abbey Road Studios"
 end
 
 When('I click the link "Visit Abbey Road Studios"') do
-  google_search.click_search_result "Visit Abbey Road Studios"
+  @google.click_search_result "Visit Abbey Road Studios"
 end
 
 Then("I am redirected to the Live Feed Page") do
@@ -44,15 +46,15 @@ Then("the feed plays from live") do
 end
 
 Given("I am on Abbey Road's homepage") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @hompage.visit_ar_homepage
 end
 
 When('I click "Visit Us"') do
-  pending # Write code here that turns the phrase above into concrete actions
+  @hompage.go_to_live_feed_page
 end
 
 When('I click "Abbey Road Studios: The Most Famous Recording Studios"') do
-  pending # Write code here that turns the phrase above into concrete actions
+  @google.click_search_result "Abbey Road Studios: The Most Famous Recording Studios"
 end
 
 Then("I am redirected to the Homepage") do
@@ -72,7 +74,7 @@ Then("the images are in chronological order") do
 end
 
 When("I click the share button") do
-  @live_feed.click_button_text("Share post")
+  @live_feed.click_button_text "Share post"
 end
 
 Then("a modal appears to share the image") do
