@@ -27,11 +27,11 @@ Feature: Live Feed
       And I click "Abbey Road Studios: The Most Famous Recording Studios"
     Then I am redirected to the Homepage
 
-  # Scenario: As a User, I can click on any archived time and live, and see the button I selected change to red, so that I know when I am viewing the feed from.
-  #   Given I am on the Live Feed Page
-  #   When I click one of the time tabs
-  #   Then that tab turn red
-  #
+  Scenario: As a User, I can click on any archived time and live, and see the button I selected change to red, so that I know when I am viewing the feed from.
+    Given I am on the Live Feed Page
+    When I click one of the time tabs
+    Then that tab turn red
+  
   Scenario: As a User, I can see the live crossing feed by default, so that I can see the most recent feed instantly.
     Given I am on the Live Feed Page
     Then the feed plays from live
