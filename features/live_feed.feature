@@ -16,16 +16,11 @@ Feature: Live Feed
     When I click the live time tab
     Then the feed plays from live
 
-  # Scenario: As a User, I can go to the homepage directly and navigate to the Live Feed by Visit Us so that I can view the crossing feed.
-  #   Given I am on Abbey Road's homepage
-  #   When I click "Visit Us"
-  #   Then I am redirected to the Live Feed Page
-  #
-  # Scenario: As a User, I can go to the homepage directly and navigate to the Live Feed by Visit Us so that I can view the crossing feed.
-  #   Given I am on Abbey Road's homepage
-  #   When I click "Visit Us"
-  #   Then I am redirected to the Live Feed Page
-  #
+  Scenario: As a User, I can go to the homepage directly and navigate to the Live Feed by Visit Us so that I can view the crossing feed.
+    Given I am on Abbey Road's homepage
+    When I click "Visit Us"
+    Then I am redirected to the Live Feed Page
+
   # Scenario: As A User, I can Input 'Abbey Road', and use first link from Google, so that I can reach the homepage and view the website.
   #   Given I am on Google's search page
   #   When I search "Abbey Road Studios"
@@ -59,7 +54,7 @@ Feature: Live Feed
   #     And I fill in the email to
   #     And I click send
   #   Then I receive an email
-  #
+
   # Scenario: As a User, in the modal I can share via Facebook
   # Scenario: As a User, in the modal I can share via Twitter
   # Scenario: As a User, in the modal I can share via Pinterest
