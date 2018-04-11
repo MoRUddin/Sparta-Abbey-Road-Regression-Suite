@@ -41,11 +41,11 @@ Feature: Live Feed
   #   Then I can see the 6 images on the Wall of Fame
   #     And the images are in chronological order
   #
-  # Scenario: As a User, I can use the Share option, on an archived time or the live feed and a modal appears.
-  #   Given I am on the Live Feed Page
-  #   When I click the share button
-  #   Then a modal appears to share the image
-  #
+  Scenario: As a User, I can use the Share option, on an archived time or the live feed and a modal appears.
+    Given I am on the Live Feed Page
+    When I click the share button
+    Then a modal appears to share the image
+
   # Scenario: As a User, from the modal, I can share the image via email
   #   Given I am on the sharing modal
   #     And I click the email button
