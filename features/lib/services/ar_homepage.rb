@@ -5,7 +5,7 @@ require "pry"
 class AbbeyRoadHomepage
   include Capybara::DSL
 
-  AR_HOMEPAGE_URL = "http://www.abbeyroad.com/"
+  AR_HOMEPAGE_URL = "https://www.abbeyroad.com/"
   VISIT_US_TAB = ".nav.navbar-nav.visible-lg li"
 
   def get_url
