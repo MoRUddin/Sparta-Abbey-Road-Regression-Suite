@@ -1,23 +1,21 @@
 Before do
-  @google = google_search
   @live_feed = ar_live_feed
-  @homepage = ar_homepage
 end
 
 Given("I am on Google's search page") do
-  @google.visit_google
+  google_search.visit_google
 end
 
 When('I search "Abbey Road Crossing"') do
-  @google.fill_search_field "Abbey Road Crossing"
+  google_search.fill_search_field "Abbey Road Crossing"
 end
 
 When('I search "Abbey Road Studios"') do
-  @google.fill_search_field "Abbey Road Studios"
+  google_search.fill_search_field "Abbey Road Studios"
 end
 
 When('I click the link "Visit Abbey Road Studios"') do
-  @google.click_search_result "Visit Abbey Road Studios"
+  google_search.click_search_result "Visit Abbey Road Studios"
 end
 
 Then("I am redirected to the Live Feed Page") do
@@ -46,19 +44,19 @@ Then("the feed plays from live") do
 end
 
 Given("I am on Abbey Road's homepage") do
-  @homepage.visit_ar_homepage
+  pending # Write code here that turns the phrase above into concrete actions
 end
 
 When('I click "Visit Us"') do
-  @homepage.go_to_live_feed_page
+  pending # Write code here that turns the phrase above into concrete actions
 end
 
 When('I click "Abbey Road Studios: The Most Famous Recording Studios"') do
-  @google.click_search_result("Abbey Road Studios: The Most Famous Recording Studios")
+  pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then("I am redirected to the Homepage") do
-  expect(@live_feed.this_url).to eq("https://www.abbeyroad.com/")
+  pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then("that tab turn red") do
@@ -66,15 +64,15 @@ Then("that tab turn red") do
 end
 
 Then("it should be defaulted to the live feed") do
-  pending
+  pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then("I can see the 6 images on the Wall of Fame") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@live_feed.get_wall_image_count).to eq 6
 end
 
 Then("the images are in chronological order") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@live_feed.is_wall_chronological).to eq true
 end
 
 When("I click the share button") do

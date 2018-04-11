@@ -10,6 +10,8 @@ class AbbeyRoadLiveFeed
   CURRENT_VIDEO_TIME_CLASS = "div.vjs-time-tooltip"
   LIVE_VIDEO_TEXT = "div.vjs-live-display"
   SELECTED_CLASS = "a.selected"
+  WALL_OF_FAME = "div.items"
+  WALL_OF_FAME_TIMESTAMP = "small"
 
   def this_url
     current_url
@@ -43,5 +45,20 @@ class AbbeyRoadLiveFeed
   end
   def get_selected_time_colour
     find(SELECTED_CLASS).native.css_value('background-color')
+  end
+  def get_wall_image_count
+    find(WALL_OF_FAME).all("img").length
+  end
+  def get_wall_timestamp index
+    all(:css, WALL_OF_FAME_TIMESTAMP)[index].text
+  end
+  def is_wall_chronological
+    wall_array = all(:css,"small")
+    (0..4).each do |i|
+      if DateTime.parse(wall_array[i].text) < DateTime.parse(wall_array[i+1].text)
+        return false
+      end
+    end
+    return true
   end
 end
