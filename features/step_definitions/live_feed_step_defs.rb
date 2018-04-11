@@ -81,6 +81,10 @@ Then("a modal appears to share the image") do
   expect(@live_feed.share_modal_visible).to be true
 end
 
+Given("I have an email") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
 Given("I am on the sharing modal") do
   pending # Write code here that turns the phrase above into concrete actions
 end

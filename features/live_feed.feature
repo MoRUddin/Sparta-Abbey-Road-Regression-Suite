@@ -46,14 +46,15 @@ Feature: Live Feed
     When I click the share button
     Then a modal appears to share the image
 
-  # Scenario: As a User, from the modal, I can share the image via email
-  #   Given I am on the sharing modal
-  #     And I click the email button
-  #     And I fill in my name
-  #     And I fill in the email from
-  #     And I fill in the email to
-  #     And I click send
-  #   Then I receive an email
+  Scenario: As a User, from the modal, I can share the image via email
+    Given I have an email
+      And I am on the sharing modal
+      And I click the email button
+      And I fill in my name
+      And I fill in the email from
+      And I fill in the email to
+      And I click send
+    Then I receive an email
 
   # Scenario: As a User, in the modal I can share via Facebook
   # Scenario: As a User, in the modal I can share via Twitter
