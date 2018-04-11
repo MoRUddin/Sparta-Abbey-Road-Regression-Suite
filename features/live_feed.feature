@@ -16,30 +16,25 @@ Feature: Live Feed
   #   When I click the live time tab
   #   Then the feed plays from live
 
-  # Scenario: As a User, I can go to the homepage directly and navigate to the Live Feed by Visit Us so that I can view the crossing feed.
-  #   Given I am on Abbey Road's homepage
-  #   When I click "Visit Us"
-  #   Then I am redirected to the Live Feed Page
-  #
-  # Scenario: As a User, I can go to the homepage directly and navigate to the Live Feed by Visit Us so that I can view the crossing feed.
-  #   Given I am on Abbey Road's homepage
-  #   When I click "Visit Us"
-  #   Then I am redirected to the Live Feed Page
-  #
-  # Scenario: As A User, I can Input 'Abbey Road', and use first link from Google, so that I can reach the homepage and view the website.
-  #   Given I am on Google's search page
-  #   When I search "Abbey Road Studios"
-  #     And I click "Abbey Road Studios: The Most Famous Recording Studios"
-  #   Then I am redirected to the Homepage
-  #
-  Scenario: As a User, I can click on any archived time and live, and see the button I selected change to red, so that I know when I am viewing the feed from.
-    Given I am on the Live Feed Page
-    When I click one of the time tabs
-    Then that tab turn red
-  #
-  # Scenario: As a User, I can see the live crossing feed by default, so that I can see the most recent feed instantly.
+  Scenario: As a User, I can go to the homepage directly and navigate to the Live Feed by Visit Us so that I can view the crossing feed.
+    Given I am on Abbey Road's homepage
+    When I click "Visit Us"
+    Then I am redirected to the Live Feed Page
+
+  Scenario: As A User, I can Input 'Abbey Road', and use first link from Google, so that I can reach the homepage and view the website.
+    Given I am on Google's search page
+    When I search "Abbey Road Studios"
+      And I click "Abbey Road Studios: The Most Famous Recording Studios"
+    Then I am redirected to the Homepage
+
+  # Scenario: As a User, I can click on any archived time and live, and see the button I selected change to red, so that I know when I am viewing the feed from.
   #   Given I am on the Live Feed Page
-  #   Then it should be defaulted to the live feed
+  #   When I click one of the time tabs
+  #   Then that tab turn red
+  #
+  Scenario: As a User, I can see the live crossing feed by default, so that I can see the most recent feed instantly.
+    Given I am on the Live Feed Page
+    Then the feed plays from live
   #
   # Scenario: As a User, I can view the most recent 6 images for Hall of Fame.
   #   Given I am on the Live Feed Page
@@ -59,7 +54,7 @@ Feature: Live Feed
   #     And I fill in the email to
   #     And I click send
   #   Then I receive an email
-  #
+
   # Scenario: As a User, in the modal I can share via Facebook
   # Scenario: As a User, in the modal I can share via Twitter
   # Scenario: As a User, in the modal I can share via Pinterest
