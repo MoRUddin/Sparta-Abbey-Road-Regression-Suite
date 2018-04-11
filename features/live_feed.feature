@@ -21,12 +21,12 @@ Feature: Live Feed
     When I click "Visit Us"
     Then I am redirected to the Live Feed Page
 
-  # Scenario: As A User, I can Input 'Abbey Road', and use first link from Google, so that I can reach the homepage and view the website.
-  #   Given I am on Google's search page
-  #   When I search "Abbey Road Studios"
-  #     And I click "Abbey Road Studios: The Most Famous Recording Studios"
-  #   Then I am redirected to the Homepage
-  #
+  Scenario: As A User, I can Input 'Abbey Road', and use first link from Google, so that I can reach the homepage and view the website.
+    Given I am on Google's search page
+    When I search "Abbey Road Studios"
+      And I click "Abbey Road Studios: The Most Famous Recording Studios"
+    Then I am redirected to the Homepage
+  
   # Scenario: As a User, I can click on any archived time and live, and see the button I selected change to red, so that I know when I am viewing the feed from.
   #   Given I am on the Live Feed Page
   #   When I click one of the time tabs

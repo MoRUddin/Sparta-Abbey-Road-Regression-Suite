@@ -54,11 +54,11 @@ When('I click "Visit Us"') do
 end
 
 When('I click "Abbey Road Studios: The Most Famous Recording Studios"') do
-  pending # Write code here that turns the phrase above into concrete actions
+  @google.click_search_result("Abbey Road Studios: The Most Famous Recording Studios")
 end
 
 Then("I am redirected to the Homepage") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@live_feed.this_url).to eq("https://www.abbeyroad.com/")
 end
 
 Then("that tab turn red") do
