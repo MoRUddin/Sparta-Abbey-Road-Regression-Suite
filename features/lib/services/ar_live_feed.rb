@@ -12,6 +12,8 @@ class AbbeyRoadLiveFeed
   SELECTED_CLASS = "a.selected"
   WALL_OF_FAME = "div.items"
   WALL_OF_FAME_TIMESTAMP = "small"
+  MODAL_CLASS = "div.modal-content"
+  SHARE_MODAL_TEXT = "To share on social media, post to the Hall Of Fame first then use the links above. Post to Hall Of Fame Smileys & PeopleAnimals & NatureFood & DrinkActivityTravel & PlacesObjectsSymbolsFlagsDiversityDiversityDiversityDiversityDiversity Smileys & PeopleAnimals & NatureFood & DrinkActivityTravel & PlacesObjectsSymbolsFlagsDiversityDiversityDiversityDiversityDiversity Smileys & PeopleAnimals & NatureFood & DrinkActivityTravel & PlacesObjectsSymbolsFlagsDiversityDiversityDiversityDiversityDiversity Post"
 
   def this_url
     current_url
@@ -60,5 +62,19 @@ class AbbeyRoadLiveFeed
       end
     end
     return true
+  end
+  def click_button_text button_text
+    click_button(button_text)
+  end
+  def find_modals
+    all(MODAL_CLASS)
+  end
+  def share_modal_visible
+    sleep 1
+    find_modals.each do |modal|
+      if modal.text == SHARE_MODAL_TEXT
+        return modal.visible?
+      end
+    end
   end
 end

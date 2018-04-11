@@ -19,7 +19,7 @@ When('I click the link "Visit Abbey Road Studios"') do
 end
 
 Then("I am redirected to the Live Feed Page") do
-  expect(@live_feed.this_url).to eq("https://www.abbeyroad.com/crossing")
+  expect(@live_feed.this_url).to eq "https://www.abbeyroad.com/crossing"
 end
 
 Given("I am on the Live Feed Page") do
@@ -56,15 +56,11 @@ When('I click "Abbey Road Studios: The Most Famous Recording Studios"') do
 end
 
 Then("I am redirected to the Homepage") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@live_feed.this_url).to eq "https://www.abbeyroad.com/"
 end
 
 Then("that tab turn red") do
   expect(@live_feed.get_selected_time_colour).to eq "rgba(215, 25, 32, 1)"
-end
-
-Then("it should be defaulted to the live feed") do
-  pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then("I can see the 6 images on the Wall of Fame") do
@@ -76,10 +72,14 @@ Then("the images are in chronological order") do
 end
 
 When("I click the share button") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @live_feed.click_button_text("Share post")
 end
 
 Then("a modal appears to share the image") do
+  expect(@live_feed.share_modal_visible).to be true
+end
+
+Given("I have an email") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
