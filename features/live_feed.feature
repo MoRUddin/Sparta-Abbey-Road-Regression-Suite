@@ -32,9 +32,9 @@ Feature: Live Feed
   #   When I click one of the time tabs
   #   Then that tab turn red
   #
-  # Scenario: As a User, I can see the live crossing feed by default, so that I can see the most recent feed instantly.
-  #   Given I am on the Live Feed Page
-  #   Then it should be defaulted to the live feed
+  Scenario: As a User, I can see the live crossing feed by default, so that I can see the most recent feed instantly.
+    Given I am on the Live Feed Page
+    Then the feed plays from live
   #
   # Scenario: As a User, I can view the most recent 6 images for Hall of Fame.
   #   Given I am on the Live Feed Page

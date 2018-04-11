@@ -66,7 +66,7 @@ Then("that tab turn red") do
 end
 
 Then("it should be defaulted to the live feed") do
-  pending # Write code here that turns the phrase above into concrete actions
+  pending
 end
 
 Then("I can see the 6 images on the Wall of Fame") do
