@@ -1,6 +1,6 @@
 Before do
   @live_feed = ar_live_feed
-  @homepage = ar_hompage
+  @homepage = ar_homepage
   @google = google_search
 end
 
@@ -46,11 +46,11 @@ Then("the feed plays from live") do
 end
 
 Given("I am on Abbey Road's homepage") do
-  @hompage.visit_ar_homepage
+  @homepage.visit_ar_homepage
 end
 
 When('I click "Visit Us"') do
-  @hompage.go_to_live_feed_page
+  @homepage.go_to_live_feed_page
 end
 
 When('I click "Abbey Road Studios: The Most Famous Recording Studios"') do
