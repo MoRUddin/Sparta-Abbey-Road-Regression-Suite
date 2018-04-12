@@ -84,7 +84,7 @@ When("I click the share button") do
 end
 
 Then("a modal appears to share the image") do
-  expect(@live_feed.share_modal_visible).to be true
+  expect(@live_feed.share_modal_button_visible).to be true
 end
 
 Given("I have an email") do
@@ -116,4 +116,12 @@ Then("I receive an email") do
   @email.visit_homepage
   @email.get_first_email
   expect(@email.get_sender).to eq "donotreply@abbeyroad.com"
+end
+
+When("I click Post") do
+  @live_feed.click_button_text "Post"
+end
+
+Then("I am shown an error modal") do
+  expect(@live_feed.error_modal_button_visible).to be true
 end

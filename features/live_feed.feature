@@ -20,11 +20,6 @@ Feature: Live Feed
     Given I am on Abbey Road's homepage
     When I click "Visit Us"
     Then I am redirected to the Stage Live Feed Page
-# Repeated Scenario
-  # Scenario: As a User, I can go to the homepage directly and navigate to the Live Feed by Visit Us so that I can view the crossing feed.
-  #   Given I am on Abbey Road's homepage
-  #   When I click "Visit Us"
-  #   Then I am redirected to the Live Feed Page
 
   Scenario: As A User, I can Input 'Abbey Road', and use first link from Google, so that I can reach the homepage and view the website.
     Given I am on Google's search page
@@ -62,10 +57,18 @@ Feature: Live Feed
   #     And I click send
   #   Then I receive an email
 
+  Scenario: As a User, from the modal, if I try to submit without a name, then I get an error
+    Given I am on the Live Feed Page
+    When I click the share button
+    And I click Post
+    Then I am shown an error modal
+
+
+
+
   # Scenario: As a User, in the modal I can share via Facebook
   # Scenario: As a User, in the modal I can share via Twitter
   # Scenario: As a User, in the modal I can share via Pinterest
   # Scenario: As a User, in the modal I can share via Google Plus
   # Scenario: As a User, from the modal, I can post to the wall of fame
   # Scenario: As a User, from the modal, I can download the image
-  # Scenario: As a User, from the modal, if I try to submit without a name, then I get an error
