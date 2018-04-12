@@ -7,7 +7,7 @@ Given("I am on the Register Login page") do
 end
 
 When("I enter all correct and valid details,") do
-  @registration.fill_in_register_form "Test12345454", "Test@testingtesting.com", "PASSWORD321w"
+  @registration.fill_in_register_form "Test1erdd6655454", "Test@testterergtesting.com", "PASSWORD321w"
 end
 
 When("I click signup,") do
@@ -15,5 +15,5 @@ When("I click signup,") do
 end
 
 Then("I am redirected to the project dashboard.") do
-  expect(@registration.get_url).to be "https://stagemy.abbeyroad.com/projects"
+  expect(@registration.get_url).to eq "https://stagemy.abbeyroad.com/projects"
 end
