@@ -13,6 +13,9 @@ module AbbeyRoadStage
   def temp_email
     TemporaryEmail.new
   end
+  def temp_email_bak
+    TemporaryEmailBackup.new
+  end
   def ar_p_dashboard
     ProjectDashboard.new
   end

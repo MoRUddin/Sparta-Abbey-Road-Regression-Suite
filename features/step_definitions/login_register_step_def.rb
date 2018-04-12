@@ -1,5 +1,11 @@
 Before do
   @registration = ar_registration
+  @email_bak = temp_email_bak
+end
+
+Given("I can get an email") do
+  @email_bak.visit_homepage
+  @email_bak.save_address
 end
 
 Given("I am on the Register Login page") do
@@ -7,7 +13,7 @@ Given("I am on the Register Login page") do
 end
 
 When("I enter all correct and valid details,") do
-  @registration.fill_in_register_form "Test1erdd6655454", "Test@testterergtesting.com", "PASSWORD321w"
+  @registration.fill_in_register_form "TestingName", @email_bak.email_address, "PASSWORD321w"
 end
 
 When("I click signup,") do
