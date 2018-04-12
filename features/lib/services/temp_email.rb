@@ -1,4 +1,3 @@
-
 class TemporaryEmail
   attr_reader :email_address
   include Capybara::DSL
