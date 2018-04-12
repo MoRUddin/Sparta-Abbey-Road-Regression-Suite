@@ -1,6 +1,3 @@
-require "capybara/dsl"
-require "date"
-require "pry"
 
 class AbbeyRoadHomepage
   include Capybara::DSL
@@ -17,5 +14,4 @@ class AbbeyRoadHomepage
   def go_to_live_feed_page
     all(VISIT_US_TAB).last.click
   end
-
 end

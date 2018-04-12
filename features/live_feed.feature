@@ -53,7 +53,8 @@ Feature: Live Feed
 
   Scenario: As a User, from the modal, I can share the image via email
     Given I have an email
-      And I am on the sharing modal
+      And I am on the Live Feed Page
+    When I click the share button
       And I click the email button
       And I fill in my name
       And I fill in the email from

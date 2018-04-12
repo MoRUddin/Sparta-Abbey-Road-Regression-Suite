@@ -2,6 +2,7 @@ Before do
   @live_feed = ar_live_feed
   @homepage = ar_homepage
   @google = google_search
+  @email = temp_email
 end
 
 Given("I am on Google's search page") do
@@ -82,33 +83,32 @@ Then("a modal appears to share the image") do
 end
 
 Given("I have an email") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Given("I am on the sharing modal") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @email.visit_homepage
+  @email.save_address
 end
 
 Given("I click the email button") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @live_feed.click_envelope
 end
 
 Given("I fill in my name") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @live_feed.fill_in_modal_name "name"
 end
 
 Given("I fill in the email from") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @live_feed.fill_in_email_from @email.email_address
 end
 
 Given("I fill in the email to") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @live_feed.fill_in_email_to @email.email_address
 end
 
 Given("I click send") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @live_feed.click_button_text "Send"
 end
 
 Then("I receive an email") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @email.visit_homepage
+  @email.get_first_email
+  expect(@email.get_sender).to eq "donotreply@abbeyroad.com"
 end

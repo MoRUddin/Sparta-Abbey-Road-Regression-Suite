@@ -1,6 +1,3 @@
-require "capybara/dsl"
-require "date"
-require "pry"
 
 class AbbeyRoadLiveFeed
   include Capybara::DSL
@@ -14,6 +11,9 @@ class AbbeyRoadLiveFeed
   WALL_OF_FAME_TIMESTAMP = "small"
   MODAL_CLASS = "div.modal-content"
   SHARE_MODAL_TEXT = "To share on social media, post to the Hall Of Fame first then use the links above. Post to Hall Of Fame Smileys & PeopleAnimals & NatureFood & DrinkActivityTravel & PlacesObjectsSymbolsFlagsDiversityDiversityDiversityDiversityDiversity Smileys & PeopleAnimals & NatureFood & DrinkActivityTravel & PlacesObjectsSymbolsFlagsDiversityDiversityDiversityDiversityDiversity Smileys & PeopleAnimals & NatureFood & DrinkActivityTravel & PlacesObjectsSymbolsFlagsDiversityDiversityDiversityDiversityDiversity Post"
+  ENVELOPE_ICON = "i.fa.fa-envelope-o"
+  EMOJI_FIELD_CLASS = ".emojionearea-editor"
+  EMAIL_FIELD_CLASS = "input.form-control"
 
   def this_url
     current_url
@@ -76,5 +76,17 @@ class AbbeyRoadLiveFeed
         return modal.visible?
       end
     end
+  end
+  def click_envelope
+    find(ENVELOPE_ICON).click
+  end
+  def fill_in_modal_name name
+    all(EMOJI_FIELD_CLASS)[0].send_keys name
+  end
+  def fill_in_email_from email
+    all(EMAIL_FIELD_CLASS)[1].send_keys email
+  end
+  def fill_in_email_to email
+    all(EMAIL_FIELD_CLASS)[2].send_keys email
   end
 end
