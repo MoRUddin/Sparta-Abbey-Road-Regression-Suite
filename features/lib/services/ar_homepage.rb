@@ -2,7 +2,7 @@
 class AbbeyRoadHomepage
   include Capybara::DSL
 
-  AR_HOMEPAGE_URL = "https://www.abbeyroad.com/"
+  AR_HOMEPAGE_URL = "https://stage.abbeyroad.com/"
   VISIT_US_TAB = ".nav.navbar-nav.visible-lg li"
 
   def get_url

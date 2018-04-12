@@ -19,13 +19,7 @@ Feature: Live Feed
   Scenario: As a User, I can go to the homepage directly and navigate to the Live Feed by Visit Us so that I can view the crossing feed.
     Given I am on Abbey Road's homepage
     When I click "Visit Us"
-    Then I am redirected to the Live Feed Page
-
-  # DUPLICATE ---
-  # Scenario: As a User, I can go to the homepage directly and navigate to the Live Feed by Visit Us so that I can view the crossing feed.
-  #   Given I am on Abbey Road's homepage
-  #   When I click "Visit Us"
-  #   Then I am redirected to the Live Feed Page
+    Then I am redirected to the Stage Live Feed Page
 
   Scenario: As A User, I can Input 'Abbey Road', and use first link from Google, so that I can reach the homepage and view the website.
     Given I am on Google's search page
@@ -52,16 +46,16 @@ Feature: Live Feed
     When I click the share button
     Then a modal appears to share the image
 
-  Scenario: As a User, from the modal, I can share the image via email
-    Given I have an email
-      And I am on the Live Feed Page
-    When I click the share button
-      And I click the email button
-      And I fill in my name
-      And I fill in the email from
-      And I fill in the email to
-      And I click send
-    Then I receive an email
+  # Scenario: As a User, from the modal, I can share the image via email
+  #   Given I have an email
+  #     And I am on the Live Feed Page
+  #   When I click the share button
+  #     And I click the email button
+  #     And I fill in my name
+  #     And I fill in the email from
+  #     And I fill in the email to
+  #     And I click send
+  #   Then I receive an email
 
   Scenario: As a User, from the modal, if I try to submit without a name, then I get an error
     Given I am on the Live Feed Page
