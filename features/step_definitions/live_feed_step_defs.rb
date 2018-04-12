@@ -3,6 +3,7 @@ Before do
   @homepage = ar_homepage
   @google = google_search
   @email = temp_email
+  @project_dashboard = ar_p_dashboard
 end
 
 Given("I am on Google's search page") do
