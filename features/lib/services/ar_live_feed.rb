@@ -79,11 +79,11 @@ class AbbeyRoadLiveFeed
     all(EMAIL_FIELD_CLASS)[2].send_keys email
   end
   def error_modal_button_visible
-    sleep 1
-    return find_button(ERROR_MODAL_BUTTON_TEXT).visible?
+    sleep 2
+    find_button(ERROR_MODAL_BUTTON_TEXT).visible?
   end
   def share_modal_button_visible
-    sleep 1
-    return find_button(SHARE_MODAL_POST_BUTTON).visible?
+    sleep 2
+    find_button(SHARE_MODAL_POST_BUTTON).visible?
   end
 end
