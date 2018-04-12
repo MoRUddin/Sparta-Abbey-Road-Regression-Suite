@@ -8,32 +8,28 @@ REGISTER_URL = "https://stagemy.abbeyroad.com/account/login"
 # REGISTER_PASSWORD_FIELD_XPATH = '//*[@id="register"]/div/form/div[4]/div/input'
 # REGISTER_PASSWORD_CONFIRMATION_FIELD_XPATH = '//*[@id="register"]/div/form/div[5]/div/input'
 
-REGISTER_SCOPE = '//div/[@id="register"]'
+REGISTER_SCOPE = '//*[@id="register"]'
 
   def visit_registration_page
     visit(REGISTER_URL)
   end
 
-  def fill_in_register_form name
-    within(REGISTER_SCOPE) do
+  def fill_in_register_form name, email, password
+    within(:xpath, REGISTER_SCOPE) do
       fill_in 'Name', :with => name
+      fill_in 'Email', :with => email
+      fill_in 'ConfirmEmail', :with => email
+      fill_in 'Password', :with => password
+      fill_in 'ConfirmPassword', :with => password
     end
   end
 
-  def fill_in_email_field email
-    fill_in(REGISTER_EMAIL_FIELD_XPATH, :with => email)
+  def click_register_button button_text
+    click_button(button_text)
   end
 
-  def fill_in_email_confirm_field email
-    fill_in(REGISTER_EMAIL_CONFIRM_FIELD_XPATH, :with => email)
-  end
-
-  def fill_in_password_field password
-    fill_in(REGISTER_PASSWORD_FIELD_XPATH, :with => password)
-  end
-
-  def fill_in_password_confirm_field password
-    fill_in(REGISTER_PASSWORD_CONFIRM_FIELD_XPATH, :with => password)
+  def get_url
+    current_url
   end
 
 end
