@@ -25,6 +25,11 @@ Then("I am redirected to the Live Feed Page") do
   expect(@live_feed.this_url).to eq "https://www.abbeyroad.com/crossing"
 end
 
+Then("I am redirected to the Stage Live Feed Page") do
+  @live_feed.get_time_tabs # Alternative to sleep
+  expect(@live_feed.this_url).to eq "https://stage.abbeyroad.com/crossing"
+end
+
 Given("I am on the Live Feed Page") do
   @live_feed.visit_live_feed
 end

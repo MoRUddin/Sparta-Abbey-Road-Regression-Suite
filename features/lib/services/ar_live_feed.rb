@@ -2,7 +2,7 @@
 class AbbeyRoadLiveFeed
   include Capybara::DSL
 
-  LIVE_FEED_URL = "https://www.abbeyroad.com/crossing"
+  LIVE_FEED_URL = "https://stage.abbeyroad.com/crossing"
   TIME_TAB_LIST = "div.archive-times"
   CURRENT_VIDEO_TIME_CLASS = "div.vjs-time-tooltip"
   LIVE_VIDEO_TEXT = "div.vjs-live-display"
