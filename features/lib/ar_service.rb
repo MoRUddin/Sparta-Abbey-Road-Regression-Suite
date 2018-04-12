@@ -16,5 +16,8 @@ module AbbeyRoadStage
   def ar_p_dashboard
     ProjectDashboard.new
   end
+  def ar_registration
+    RegisterPage.new
+  end
 
 end
