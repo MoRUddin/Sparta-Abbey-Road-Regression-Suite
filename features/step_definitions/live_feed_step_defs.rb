@@ -1,25 +1,28 @@
 Before do
   @live_feed = ar_live_feed
+  @homepage = ar_homepage
+  @google = google_search
+  @email = temp_email
 end
 
 Given("I am on Google's search page") do
-  google_search.visit_google
+  @google.visit_google
 end
 
 When('I search "Abbey Road Crossing"') do
-  google_search.fill_search_field "Abbey Road Crossing"
+  @google.fill_search_field "Abbey Road Crossing"
 end
 
 When('I search "Abbey Road Studios"') do
-  google_search.fill_search_field "Abbey Road Studios"
+  @google.fill_search_field "Abbey Road Studios"
 end
 
 When('I click the link "Visit Abbey Road Studios"') do
-  google_search.click_search_result "Visit Abbey Road Studios"
+  @google.click_search_result "Visit Abbey Road Studios"
 end
 
 Then("I am redirected to the Live Feed Page") do
-  expect(@live_feed.this_url).to eq("https://www.abbeyroad.com/crossing")
+  expect(@live_feed.this_url).to eq "https://www.abbeyroad.com/crossing"
 end
 
 Given("I am on the Live Feed Page") do
@@ -44,69 +47,68 @@ Then("the feed plays from live") do
 end
 
 Given("I am on Abbey Road's homepage") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @homepage.visit_ar_homepage
 end
 
 When('I click "Visit Us"') do
-  pending # Write code here that turns the phrase above into concrete actions
+  @homepage.go_to_live_feed_page
 end
 
 When('I click "Abbey Road Studios: The Most Famous Recording Studios"') do
-  pending # Write code here that turns the phrase above into concrete actions
+  @google.click_search_result "Abbey Road Studios: The Most Famous Recording Studios"
 end
 
 Then("I am redirected to the Homepage") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@live_feed.this_url).to eq "https://www.abbeyroad.com/"
 end
 
 Then("that tab turn red") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("it should be defaulted to the live feed") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@live_feed.get_selected_time_colour).to eq "rgba(215, 25, 32, 1)"
 end
 
 Then("I can see the 6 images on the Wall of Fame") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@live_feed.get_wall_image_count).to eq 6
 end
 
 Then("the images are in chronological order") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@live_feed.is_wall_chronological).to eq true
 end
 
 When("I click the share button") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @live_feed.click_button_text "Share post"
 end
 
 Then("a modal appears to share the image") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@live_feed.share_modal_visible).to be true
 end
 
-Given("I am on the sharing modal") do
-  pending # Write code here that turns the phrase above into concrete actions
+Given("I have an email") do
+  @email.visit_homepage
+  @email.save_address
 end
 
 Given("I click the email button") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @live_feed.click_envelope
 end
 
 Given("I fill in my name") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @live_feed.fill_in_modal_name "name"
 end
 
 Given("I fill in the email from") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @live_feed.fill_in_email_from @email.email_address
 end
 
 Given("I fill in the email to") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @live_feed.fill_in_email_to @email.email_address
 end
 
 Given("I click send") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @live_feed.click_button_text "Send"
 end
 
 Then("I receive an email") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @email.visit_homepage
+  @email.get_first_email
+  expect(@email.get_sender).to eq "donotreply@abbeyroad.com"
 end

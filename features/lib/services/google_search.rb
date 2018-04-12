@@ -1,4 +1,3 @@
-require "capybara/dsl"
 
 class GoogleSearch
   include Capybara::DSL
@@ -16,5 +15,4 @@ class GoogleSearch
   def click_search_result text
     click_link text
   end
-
 end

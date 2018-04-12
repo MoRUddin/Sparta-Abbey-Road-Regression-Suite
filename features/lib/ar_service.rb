@@ -10,5 +10,8 @@ module AbbeyRoadStage
   def ar_live_feed
     AbbeyRoadLiveFeed.new
   end
+  def temp_email
+    TemporaryEmail.new
+  end
 
 end
