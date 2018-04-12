@@ -13,5 +13,8 @@ module AbbeyRoadStage
   def temp_email
     TemporaryEmail.new
   end
+  def ar_registration
+    RegisterPage.new
+  end
 
 end
