@@ -51,7 +51,7 @@ Feature: Live Feed
     Given I am on the Live Feed Page
     When I click the share button
     Then a modal appears to share the image
-  
+
   Scenario: As a User, from the modal, I can share the image via email
     Given I have an email
       And I am on the Live Feed Page
