@@ -4,41 +4,45 @@ Before do
   @google = google_search
   @email = temp_email
   @project_dashboard = ar_p_dashboard
+  @reg = ar_registration
 end
 
 Given("I am a logged in user") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @reg.visit_registration_page
+  @reg.fill_in_login_form("sp_ar_test@yahoo.com","Thisissparta1")
+  @registration.click_register_button "Login"
 end
 
 Given("I am on projects tab") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @project_dashboard.visit_projects
 end
 
 When("I click new mastering project") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @project_dashboard.click_new_mastering
 end
 
 Then("I am redirected to entering new mastering project details") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@project_dashboard.verify_new_mastering).to be true
 end
 
 Given("I have clicked online mixing") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @project_dashboard.visit_mixing
 end
 
 
 When("I click the start project button") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @project_dashboard.start_mixing_project
+
 end
 
 Then("I am redirected to the online mixing upload page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@project_dashboard.verify_new_mixing).to be true
 end
 
 When("I click new mixing project") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @project_dashboard.click_new_mixing
 end
 
 Then("I am redirected to entering new mixing project details") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@project_dashboard.verify_new_mixing).to be true
 end
