@@ -32,7 +32,6 @@ end
 
 When("I click the start project button") do
   @project_dashboard.start_mixing_project
-
 end
 
 Then("I am redirected to the online mixing upload page") do
@@ -47,10 +46,24 @@ Then("I am redirected to entering new mixing project details") do
   expect(@project_dashboard.verify_new_mixing).to be true
 end
 
+
 Given("I am on the online mastering page") do
   @project_dashboard.visit_mastering
 end
 
 When('I click "Upload track"') do
   @project_dashboard.click_link_by_text("Upload track")
+end
+
+Given("I click on extra options section") do
+  @project_dashboard.click_link "Extra Options"
+end
+
+When("I select fast track") do
+  @project_dashboard.add_fast_track_to_basket
+  sleep 1
+end
+
+Then("The remove from basket option appears") do
+  expect(@project_dashboard.check_added_to_basket).to eq "item selected"
 end

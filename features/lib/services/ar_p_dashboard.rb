@@ -10,6 +10,9 @@ class ProjectDashboard
   NEW_MIXING_PROJECT = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div[1]/div/div/div[1]/h5'
   START_MIXING_PROJECT_BTN = "Start Project"
 
+  ADD_TO_BASKET_XPATH= '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div/div[1]/div/div/button'
+  CHECK_ADDED_TO_BASKET_XPATH= '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div/div[1]/div/div'
+
   def click_button_by_text button_text
     click_button button_text
   end
@@ -38,6 +41,9 @@ class ProjectDashboard
   def click_new_mixing
     find_link(NEW_MIXING).click
   end
+  def click_new_mixing
+    find_link(NEW_MIXING).click
+  end
   def verify_new_mixing
     if find(:xpath, NEW_MIXING_PROJECT).text == "Uploaded Tracks"
       return true
@@ -51,4 +57,11 @@ class ProjectDashboard
   def find_all_links
     all("a")
   end
+  def add_fast_track_to_basket
+    find(:xpath, ADD_TO_BASKET_XPATH).click
+  end
+  def check_added_to_basket
+    find(:xpath, CHECK_ADDED_TO_BASKET_XPATH)["class"]
+  end
+
 end
