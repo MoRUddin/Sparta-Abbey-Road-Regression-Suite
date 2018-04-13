@@ -12,7 +12,7 @@ When("I enter all correct and valid details,") do
 end
 
 When("I click signup,") do
-  @registration.click_register_button "Register"
+  @registration.click_button_by_text "Register"
 end
 
 Then("I am redirected to the project dashboard.") do
@@ -28,4 +28,16 @@ end
 Then("clicking the link redirects to the confirmation page") do
   @email.visit_url(@email.get_validation_link)
   expect(@email.get_url).to include "https://stagemy.abbeyroad.com/account/confirmemail?userId"
+end
+
+When("I click my username") do
+  @registration.click_username_link
+end
+
+When("I click logout") do
+  @registration.click_button_by_text "Log out"
+end
+
+Then("I am redirected to the login page") do
+  expect(@registration.get_url).to eq "https://stagemy.abbeyroad.com/account/login?ReturnUrl=%2F"
 end
