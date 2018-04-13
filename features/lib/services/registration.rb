@@ -10,6 +10,7 @@ REGISTER_URL = "https://stagemy.abbeyroad.com/account/login"
 
 REGISTER_SCOPE = '//*[@id="register"]'
 LOGIN_SCOPE = '//*[@id="login"]'
+USERNAME_ID = 'name'
 
   def visit_registration_page
     visit(REGISTER_URL)
@@ -32,12 +33,17 @@ LOGIN_SCOPE = '//*[@id="login"]'
     end
   end
 
-  def click_register_button button_text
+  def click_button_by_text button_text
     click_button(button_text)
   end
 
   def get_url
     current_url
   end
+
+  def click_username_link
+    click_button(USERNAME_ID)
+  end
+
 
 end

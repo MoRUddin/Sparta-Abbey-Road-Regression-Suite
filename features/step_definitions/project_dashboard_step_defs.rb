@@ -10,7 +10,7 @@ end
 Given("I am a logged in user") do
   @reg.visit_registration_page
   @reg.fill_in_login_form("sp_ar_test@yahoo.com","Thisissparta1")
-  @registration.click_register_button "Login"
+  @registration.click_button_by_text "Login"
 end
 
 Given("I am on projects tab") do
