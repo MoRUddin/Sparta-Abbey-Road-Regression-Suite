@@ -16,6 +16,7 @@ Feature: Project dashboard
   #   And I am on projects tab
   #   When I click new mixing project
   #   Then I am redirected to entering new mixing project details
+<<<<<<< HEAD
 
   Scenario:
     Given I am a logged in user
@@ -23,3 +24,5 @@ Feature: Project dashboard
     And I click on extra options section
     When I select fast track
     Then The remove from basket option appears
+=======
+>>>>>>> dev
