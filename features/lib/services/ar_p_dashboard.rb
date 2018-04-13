@@ -9,6 +9,10 @@ class ProjectDashboard
     NEW_MIXING_PROJECT = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div[1]/div/div/div[1]/h5'
     START_MIXING_PROJECT_BTN = "Start Project"
 
+    ADD_TO_BASKET_XPATH= '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div/div[1]/div/div/button'
+    CHECK_ADDED_TO_BASKET_XPATH= '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div/div[1]/div/div'
+
+
     def visit_projects
       visit(PROJECTS_URL)
     end
@@ -43,5 +47,13 @@ class ProjectDashboard
 
     def start_mixing_project
       find_link(START_MIXING_PROJECT_BTN).click
+    end
+
+    def add_fast_track_to_basket
+      find(:xpath, ADD_TO_BASKET_XPATH).click
+    end
+
+    def check_added_to_basket
+      find(:xpath, CHECK_ADDED_TO_BASKET_XPATH)["class"]
     end
 end

@@ -1,4 +1,3 @@
-
 class AbbeyRoadLiveFeed
   include Capybara::DSL
 
