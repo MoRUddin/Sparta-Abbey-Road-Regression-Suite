@@ -48,9 +48,10 @@ Then("I am redirected to entering new mixing project details") do
 end
 
 When("I click on the tracks tab") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @project_dashboard.click_track_link
 end
 
 Then("I am redirected to the tracks where I can see my uploaded tracks") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @project_dashboard.find_track_link
+  expect(@project_dashboard.get_url).to eq "https://stagemy.abbeyroad.com/tracks"
 end

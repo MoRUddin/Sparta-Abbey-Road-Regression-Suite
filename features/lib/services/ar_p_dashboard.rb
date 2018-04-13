@@ -8,6 +8,7 @@ class ProjectDashboard
     NEW_MIXING = "New Mixing Project"
     NEW_MIXING_PROJECT = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div[1]/div/div/div[1]/h5'
     START_MIXING_PROJECT_BTN = "Start Project"
+    CLICK_TRACK_LINK = '//*[@id="holder"]/main/div/div[2]/div/div[2]/ul/li[2]/a'
 
     def visit_projects
       visit(PROJECTS_URL)
@@ -43,5 +44,19 @@ class ProjectDashboard
 
     def start_mixing_project
       find_link(START_MIXING_PROJECT_BTN).click
+    end
+
+    def find_track_link
+      find(:xpath, CLICK_TRACK_LINK)
+    end
+
+    def click_track_link
+      find_track_link.click
+    end
+
+
+
+    def get_url
+      current_url
     end
 end
