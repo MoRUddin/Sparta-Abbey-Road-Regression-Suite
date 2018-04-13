@@ -39,5 +39,6 @@ When("I click logout") do
 end
 
 Then("I am redirected to the login page") do
-  expect(@registration.get_url).to eq "https://stagemy.abbeyroad.com/account/login?ReturnUrl=%2F"
+  @project_dashboard.find_all_links
+  expect(@registration.get_url).to include "https://stagemy.abbeyroad.com/account/login"
 end

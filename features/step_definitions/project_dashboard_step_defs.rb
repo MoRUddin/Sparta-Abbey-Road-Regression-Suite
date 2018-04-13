@@ -46,3 +46,11 @@ end
 Then("I am redirected to entering new mixing project details") do
   expect(@project_dashboard.verify_new_mixing).to be true
 end
+
+Given("I am on the online mastering page") do
+  @project_dashboard.visit_mastering
+end
+
+When('I click "Upload track"') do
+  @project_dashboard.click_link_by_text("Upload track")
+end
