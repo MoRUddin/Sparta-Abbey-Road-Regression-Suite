@@ -8,7 +8,7 @@ Given("I am on the Register Login page") do
 end
 
 When("I enter all correct and valid details,") do
-  @registration.fill_in_register_form "TestingName", @email_bak.email_address, "PASSWORD321w"
+  @registration.fill_in_register_form "TestingName", @email.email_address, "PASSWORD321w"
 end
 
 When("I click signup,") do
@@ -20,9 +20,12 @@ Then("I am redirected to the project dashboard.") do
 end
 
 Then("I recieve a verification email") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @email.visit_homepage
+  @email.get_first_email
+  expect(@email.get_subject).to eq "Verify your Abbey Road account"
 end
 
 Then("clicking the link redirects to the confirmation page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @email.visit_url(@email.get_validation_link)
+  expect(@email.get_url).to include "https://stagemy.abbeyroad.com/account/confirmemail?userId"
 end
