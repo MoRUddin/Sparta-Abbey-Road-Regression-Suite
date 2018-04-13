@@ -42,3 +42,21 @@ Then("I am redirected to the login page") do
   @project_dashboard.find_all_links
   expect(@registration.get_url).to include "https://stagemy.abbeyroad.com/account/login"
 end
+
+When("I access email/account management") do
+  pending # Write code here that turns the phrase above into concrete actions
+
+end
+
+When("I change username") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When("I click confirm") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("my details should be changed") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+-
