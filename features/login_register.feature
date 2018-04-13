@@ -6,9 +6,14 @@ Scenario: As a User, I can register
   # And I click signup,
   # Then I am redirected to the project dashboard.
 
-Scenario:
+Scenario: As a user I can click my username and logout
   Given I am a logged in user
   And I am on Abbey Road's homepage
   When I click my username
   And I click logout
   Then I am redirected to the login page
+
+Scenario: As a user I can click TRACKS and view all user tracks
+Given I am a logged in user
+When I click on the tracks tab
+Then I am redirected to the tracks where I can see my uploaded tracks

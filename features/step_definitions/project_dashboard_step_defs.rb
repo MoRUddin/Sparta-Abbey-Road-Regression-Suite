@@ -46,3 +46,11 @@ end
 Then("I am redirected to entering new mixing project details") do
   expect(@project_dashboard.verify_new_mixing).to be true
 end
+
+When("I click on the tracks tab") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("I am redirected to the tracks where I can see my uploaded tracks") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
