@@ -17,7 +17,15 @@ Feature: Project dashboard
   #   When I click new mixing project
   #   Then I am redirected to entering new mixing project details
 
-  Scenario: As a user I can click TRACKS and view all user tracks
+  # Scenario: As a user I can click TRACKS and view all user tracks
+  #   Given I am a logged in user
+  #   When I click on the tracks tab
+  #   Then I am redirected to the tracks where I can see my uploaded tracks
+
+  Scenario: As a user, I can go to SETTINGS to manage linked logins
     Given I am a logged in user
-    When I click on the tracks tab
-    Then I am redirected to the tracks where I can see my uploaded tracks
+    And I am on the settings tab
+    And I click manage accounts
+    When I click Facebook
+    And I log in with my Facebook details and click enter
+    Then I am taken back to the manage accounts page with a linked Facebook

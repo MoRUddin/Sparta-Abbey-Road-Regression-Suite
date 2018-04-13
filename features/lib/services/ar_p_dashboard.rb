@@ -9,6 +9,14 @@ class ProjectDashboard
     NEW_MIXING_PROJECT = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div[1]/div/div/div[1]/h5'
     START_MIXING_PROJECT_BTN = "Start Project"
     CLICK_TRACK_LINK = '//*[@id="holder"]/main/div/div[2]/div/div[2]/ul/li[2]/a'
+    CLICK_SETTINGS_LINK = '//*[@id="holder"]/main/div/div[2]/div/div[2]/ul/li[3]/a'
+    MANAGE_LOGIN_LINK = 'Manage linked logins'
+    FACEBOOK_BTN_VALUE = 'Facebook'
+    FACEBOOK_EMAIL_VALUE = 'email'
+    FACEBOOK_PASSWORD_VALUE = 'pass'
+    FACEBOOK_LOGIN_BTN_ID = 'loginbutton'
+    FACEBOOK_CONFIRM_BTN_NAME = '__CONFIRM__'
+    LINKED_ACCOUNT_REMOVE_BTN = 'Remove'
 
     def visit_projects
       visit(PROJECTS_URL)
@@ -54,7 +62,41 @@ class ProjectDashboard
       find_track_link.click
     end
 
+    def find_settings_link
+      find(:xpath, CLICK_SETTINGS_LINK)
+    end
 
+    def click_settings_link
+      find_settings_link.click
+    end
+
+    def click_manage_login_link
+      click_link(MANAGE_LOGIN_LINK)
+    end
+
+    def click_fb_button
+      click_button(FACEBOOK_BTN_VALUE)
+    end
+
+    def fill_in_fb_email(email)
+      fill_in FACEBOOK_EMAIL_VALUE, :with => email
+    end
+
+    def fill_in_fb_password(password)
+      fill_in FACEBOOK_PASSWORD_VALUE, :with => password
+    end
+
+    def click_fb_login_btn
+      click_button(FACEBOOK_LOGIN_BTN_ID)
+    end
+
+    def click_fb_confirm_btn
+      click_button(FACEBOOK_CONFIRM_BTN_NAME)
+    end
+
+    def find_fb_remove_btn
+      find_link(LINKED_ACCOUNT_REMOVE_BTN).visible?
+    end
 
     def get_url
       current_url

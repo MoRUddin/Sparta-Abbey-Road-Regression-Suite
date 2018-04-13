@@ -55,3 +55,25 @@ Then("I am redirected to the tracks where I can see my uploaded tracks") do
   @project_dashboard.find_track_link
   expect(@project_dashboard.get_url).to eq "https://stagemy.abbeyroad.com/tracks"
 end
+
+Given("I am on the settings tab") do
+  @project_dashboard.click_settings_link
+end
+
+Given("I click manage accounts") do
+  @project_dashboard.click_manage_login_link
+end
+
+When("I click Facebook") do
+  @project_dashboard.click_fb_button
+end
+
+When("I log in with my Facebook details and click enter") do
+  @project_dashboard.fill_in_fb_email('sp_ar_test@yahoo.com')
+  @project_dashboard.fill_in_fb_password('Thisissparta1')
+  @project_dashboard.click_fb_login_btn
+end
+
+Then("I am taken back to the manage accounts page with a linked Facebook") do
+  expect(@project.find_fb_remove_btn).to be true
+end
