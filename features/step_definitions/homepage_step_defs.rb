@@ -19,3 +19,12 @@ Then("I am redirected to online mixing") do
   sleep 1
   expect(@homepage.get_url).to eq "https://stage.abbeyroad.com/online-mixing"
 end
+
+When('I click "online mastering"') do
+  @homepage.click_online_mastering
+end
+
+Then("I am redirected to online mastering") do
+  sleep 1
+  expect(@homepage.get_url).to eq "https://stage.abbeyroad.com/online-mastering"
+end

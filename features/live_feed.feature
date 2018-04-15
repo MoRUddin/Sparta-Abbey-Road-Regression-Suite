@@ -60,7 +60,7 @@ Feature: Live Feed
   # Scenario: As a User, from the modal, if I try to submit without a name, then I get an error
   #   Given I am on the Live Feed Page
   #   When I click the share button
-  #   And I click Post
+  #     And I click Post
   #   Then I am shown an error modal
   #
   # Scenario: As a User, in the modal I can share via Facebook

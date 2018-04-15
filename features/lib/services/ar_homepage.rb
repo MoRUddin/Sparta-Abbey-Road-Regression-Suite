@@ -6,6 +6,7 @@ class AbbeyRoadHomepage
   VISIT_US_TAB = ".nav.navbar-nav.visible-lg li"
   ONLINE_SERVICES_TAB = "//*[@id='holder']/nav[1]/div/ul[1]/li[3]/a"
   ONLINE_MIXING_OPTION = "//*[@id='holder']/div[1]/div/div[2]/ul/li[1]/ul/li/a"
+  ONLINE_MASTERING_OPTION = "//*[@id='holder']/div[1]/div/div[2]/ul/li[2]/ul/li/a"
 
   def get_url
     current_url
@@ -21,5 +22,8 @@ class AbbeyRoadHomepage
   end
   def click_online_mixing
     find(:xpath,ONLINE_MIXING_OPTION).click
+  end
+  def click_online_mastering
+    find(:xpath,ONLINE_MASTERING_OPTION).click
   end
 end
