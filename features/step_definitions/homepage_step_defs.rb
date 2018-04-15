@@ -7,6 +7,15 @@ Before do
   @reg = ar_registration
 end
 
+When('I move my mouse over "online services"') do
+  @homepage.hover_over_online_services
+end
+
+When('I click "online mixing"') do
+  @homepage.click_online_mixing
+end
+
 Then("I am redirected to online mixing") do
+  sleep 1
   expect(@homepage.get_url).to eq "https://stage.abbeyroad.com/online-mixing"
 end
