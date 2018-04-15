@@ -9,9 +9,10 @@ class ProjectDashboard
   NEW_MIXING = "New Mixing Project"
   NEW_MIXING_PROJECT = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div[1]/div/div/div[1]/h5'
   START_MIXING_PROJECT_BTN = "Start Project"
-
   ADD_TO_BASKET_XPATH= '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div/div[1]/div/div/button'
   CHECK_ADDED_TO_BASKET_XPATH= '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div/div[1]/div/div'
+  SETTINGS_TAB_XPATH = '//*[@id="holder"]/main/div/div[2]/div/div[2]/ul/li[3]/a'
+  SETTINGS_NAME_FIELD = "#Name"
 
   def click_button_by_text button_text
     click_button button_text
@@ -63,5 +64,13 @@ class ProjectDashboard
   def check_added_to_basket
     find(:xpath, CHECK_ADDED_TO_BASKET_XPATH)["class"]
   end
-
+  def click_settings_tab
+    find(:xpath, SETTINGS_TAB_XPATH).click
+  end
+  def fill_field_with_text(field_selector,text)
+    fill_in(field_selector,with: text)
+  end
+  def get_settings_name
+    find(SETTINGS_NAME_FIELD)["value"]
+  end
 end

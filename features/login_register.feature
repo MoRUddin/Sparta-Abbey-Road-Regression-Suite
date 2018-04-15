@@ -1,5 +1,5 @@
 Feature: Register Login page
-  Scenario: As a User, I can register
+  # Scenario: As a User, I can register
   #   Given I have an email
   #     And I am on the Register Login page
   #   When I enter all correct and valid details,
@@ -22,7 +22,7 @@ Feature: Register Login page
 
   Scenario: As a logged in User, I can see email/account management so that I can change details
     Given I am a logged in user
-    When I access email/account management
+    When I access the email and account management
       And I change username
       And I click confirm
     Then my details should be changed

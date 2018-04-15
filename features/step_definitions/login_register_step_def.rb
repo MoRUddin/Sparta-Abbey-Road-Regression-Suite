@@ -43,20 +43,19 @@ Then("I am redirected to the login page") do
   expect(@registration.get_url).to include "https://stagemy.abbeyroad.com/account/login"
 end
 
-When("I access email/account management") do
-  pending # Write code here that turns the phrase above into concrete actions
-
+When("I access the email and account management") do
+  @project_dashboard.click_settings_tab
 end
 
 When("I change username") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @random_name = Faker::Name.name
+  @project_dashboard.fill_field_with_text("Name",@random_name)
 end
 
 When("I click confirm") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @project_dashboard.click_button_by_text("Save changes")
 end
 
 Then("my details should be changed") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@project_dashboard.get_settings_name).to eq @random_name
 end
--
