@@ -19,10 +19,10 @@ Feature: Register Login page
   #   Given I am on the online mastering page
   #   When I click "Upload track"
   #   Then I am redirected to the login page
-
-  Scenario: As a logged in User, I can see email/account management so that I can change details
-    Given I am a logged in user
-    When I access the email and account management
-      And I change username
-      And I click confirm
-    Then my details should be changed
+  #
+  # Scenario: As a logged in User, I can see email/account management so that I can change details
+  #   Given I am a logged in user
+  #   When I access the email and account management
+  #     And I change username
+  #     And I click confirm
+  #   Then my details should be changed

@@ -67,3 +67,16 @@ end
 Then("The remove from basket option appears") do
   expect(@project_dashboard.check_added_to_basket).to eq "item selected"
 end
+
+When("I click upload") do
+  @project_dashboard.click_button_by_text "upload"
+end
+
+When("I upload a valid wav file") do
+  pending # Write code here that turns the phrase above into concrete actions
+
+end
+
+Then("the track is added to my list of tracks") do
+  pending # Write code here that turns the phrase above into concrete actions
+end

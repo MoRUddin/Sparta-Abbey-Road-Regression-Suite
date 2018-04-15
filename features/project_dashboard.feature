@@ -17,9 +17,16 @@ Feature: Project dashboard
   #   When I click new mixing project
   #   Then I am redirected to entering new mixing project details
   #
-  # Scenario:
+  # Scenario: As a User, I can select to fast track my project.
   #   Given I am a logged in user
   #     And I click new mastering project
   #     And I click on extra options section
   #   When I select fast track
   #   Then The remove from basket option appears
+
+  Scenario: As a User, I can upload my tracks as .wav files
+    Given I am a logged in user
+      And I click new mastering project
+    When I click upload
+    And I upload a valid wav file
+    Then the track is added to my list of tracks
