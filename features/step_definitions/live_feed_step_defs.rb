@@ -85,6 +85,7 @@ When("I click the share button") do
 end
 
 Then("a modal appears to share the image") do
+  sleep 1
   expect(@live_feed.share_modal_button_visible).to be true
 end
 
