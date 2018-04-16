@@ -64,7 +64,7 @@ When('I click "Upload track"') do
 end
 
 Given("I click on extra options section") do
-  @project_dashboard.click_link "Extra Options"
+  @project_dashboard.click_link_by_text "Extra Options"
 end
 
 When("I select fast track") do
