@@ -14,6 +14,8 @@ class ProjectDashboard
     CHECK_ADDED_TO_BASKET_XPATH= '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div/div[1]/div/div'
     SETTINGS_TAB_XPATH = '//*[@id="holder"]/main/div/div[2]/div/div[2]/ul/li[3]/a'
     SETTINGS_NAME_FIELD = "#Name"
+    TITLE_NOTE_FIELD = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/input'
+    TEXT_NOTE_FIELD = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/textarea'
 
     def click_button_by_text button_text
       click_button button_text
@@ -80,4 +82,12 @@ class ProjectDashboard
     def get_settings_name
       find(SETTINGS_NAME_FIELD)["value"]
     end
+    def check_note_title_text
+      find(:xpath, TITLE_NOTE_FIELD).value
+    end
+    def check_note_text_area_text
+      find(:xpath, TEXT_NOTE_FIELD).text
+    end
+
+
 end
