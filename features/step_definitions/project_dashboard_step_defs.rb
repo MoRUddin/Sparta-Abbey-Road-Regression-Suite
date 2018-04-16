@@ -103,3 +103,7 @@ end
 And("The project title is filled in") do
   expect(@project_dashboard.check_note_text_area_text).to eq "Test Text"
 end
+
+Then("I can see all my projects") do
+  expect(@project_dashboard.read_project_number_text).to be > 0
+end

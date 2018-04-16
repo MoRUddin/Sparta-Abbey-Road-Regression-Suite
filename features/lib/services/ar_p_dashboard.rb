@@ -16,6 +16,7 @@ class ProjectDashboard
     SETTINGS_NAME_FIELD = "#Name"
     TITLE_NOTE_FIELD = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/input'
     TEXT_NOTE_FIELD = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/textarea'
+    PROJECT_NUMBER_TEXT = 'div.projects'
 
     def click_button_by_text button_text
       click_button button_text
@@ -87,6 +88,10 @@ class ProjectDashboard
     end
     def check_note_text_area_text
       find(:xpath, TEXT_NOTE_FIELD).text
+    end
+
+    def read_project_number_text
+    find(PROJECT_NUMBER_TEXT)['data-count'].to_i
     end
 
 
