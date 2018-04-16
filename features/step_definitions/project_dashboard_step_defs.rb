@@ -29,7 +29,6 @@ Given("I have clicked online mixing") do
   @project_dashboard.visit_mixing
 end
 
-
 When("I click the start project button") do
   @project_dashboard.start_mixing_project
 end
@@ -76,30 +75,25 @@ Then("The remove from basket option appears") do
   expect(@project_dashboard.check_added_to_basket).to eq "item selected"
 end
 
-
-Given("I have an active project") do
-  "this step does nothing..."
-end
-
 When("I click make payment on the projects tab") do
   @project_dashboard.click_checkout_project
 end
 
 When("I fill in billing details") do
   @project_dashboard.fill_in_billing_details(Faker::Name.name,Faker::Address.street_address,Faker::Address.secondary_address,Faker::Address.city,Faker::Address.community,Faker::Address.postcode)
-  sleep 10
 end
 
 When("I click place your order on the billing page") do
-  binding.pry
+  sleep 2
+  @project_dashboard.click_button_by_text "Place your order"
 end
 
 When("I fill in payment details") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @project_dashboard.fill_in_payment_details(Faker::Name.name,"08/15","08/25",File.read("features/assets/card_number.txt"),"111")
 end
 
 Then("I click make payment on the checkout page")do
-  pending
+  @project_dashboard.click_button_by_text "Make payment"
 end
 
 When("I am on the project notes page") do
@@ -132,4 +126,8 @@ end
 
 Then("I can see all my projects") do
   expect(@project_dashboard.read_project_number_text).to be > 0
+end
+
+Then("I should be redirected to the payments confirmation page") do
+  expect(@project_dashboard.get_url).to include "/payment?valid=true&trans_id="
 end
