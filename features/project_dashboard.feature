@@ -42,3 +42,20 @@ Scenario: As a User, I can add project notes that I can communicate with the pro
     And I click BACK
     Then The project notes are filled in
     And The project title is filled in
+    Then I am redirected to entering new mixing project details
+
+  Scenario: As a User, I can select to fast track my project
+    Given I am a logged in user
+    And I click new mastering project
+    And I click on extra options section
+    When I select fast track
+    Then The remove from basket option appears
+
+  Scenario: As a user I can enter my billing address so that I can place my order
+    Given I am a logged in user
+    And I am on projects tab
+    And I have an active project
+    When I click make payment on the projects tab
+    And I fill in billing details
+    When I click make payment on the billing page
+    And I
