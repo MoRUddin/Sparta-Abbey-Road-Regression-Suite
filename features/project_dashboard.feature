@@ -32,6 +32,11 @@ Feature: Project dashboard
   #   When I select fast track
   #   Then The remove from basket option appears
 
+  Scenario: As a user I can see all projects in the projects tab
+    Given I am a logged in user
+      And I am on projects tab
+    Then I can see all my projects
+
   Scenario: As a user I can enter my billing address so that I can place my order
     Given I am a logged in user
       And I am on projects tab
@@ -40,3 +45,4 @@ Feature: Project dashboard
       And I fill in billing details
     When I click place your order on the billing page
       And I fill in payment details
+    Then I click make payment on the checkout page

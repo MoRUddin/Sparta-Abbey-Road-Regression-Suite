@@ -16,6 +16,9 @@ class ProjectDashboard
     SETTINGS_NAME_FIELD = "#Name"
     PROJECT_DISPLAY = "div.project"
     BILLING_FORM_SCOPE = '//*[@id="billingAddress"]'
+    TITLE_NOTE_FIELD = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/input'
+    TEXT_NOTE_FIELD = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/textarea'
+    PROJECT_NUMBER_TEXT = 'div.projects'
 
     def click_button_by_text button_text
       click_button button_text
@@ -96,5 +99,14 @@ class ProjectDashboard
         find(:xpath, '//*[@id="billingAddress"]/div[7]/div').click #click dropdown
         all("ul.selectric-group")[0].all("li")[1].click #click UK
       end
+    end
+    def check_note_title_text
+      find(:xpath, TITLE_NOTE_FIELD).value
+    end
+    def check_note_text_area_text
+      find(:xpath, TEXT_NOTE_FIELD).text
+    end
+    def read_project_number_text
+    find(PROJECT_NUMBER_TEXT)['data-count'].to_i
     end
 end
