@@ -37,7 +37,7 @@ Feature: Project dashboard
   #     And I am on projects tab
   #   Then I can see all my projects
 
-  #DO NOT RUN BELOW SCENARIO - ONLY FOR DEMONSTRATION
+  #DO NOT RUN BELOW SCENARIO - ONLY FOR DEMONSTRATION (Test can only be run once)
   # Scenario: As a user I can enter my billing address so that I can place my order
   #   Given I am a logged in user
   #     And I am on projects tab
