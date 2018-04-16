@@ -162,4 +162,3 @@ end
 Then("I should be redirected to the payments confirmation page") do
   expect(@project_dashboard.get_url).to include "/payment?valid=true&trans_id="
 end
-end
