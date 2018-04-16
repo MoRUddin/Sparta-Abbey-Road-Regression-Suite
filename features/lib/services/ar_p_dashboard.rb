@@ -17,6 +17,8 @@ class ProjectDashboard
     TITLE_NOTE_FIELD = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/input'
     TEXT_NOTE_FIELD = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/textarea'
     PROJECT_NUMBER_TEXT = 'div.projects'
+    AUDIO_CHECKBOX = '//*[@id="existing"]/div[1]/div/label/span'
+    ISRC_TEXT = '//*[@id="tracks"]/div/div[1]/div/div[2]/div/input'
 
     def click_button_by_text button_text
       click_button button_text
@@ -93,6 +95,16 @@ class ProjectDashboard
     def read_project_number_text
     find(PROJECT_NUMBER_TEXT)['data-count'].to_i
     end
+
+    def check_audio_checkbox
+      find(:xpath, AUDIO_CHECKBOX).click
+    end
+
+    def read_isrc_text
+      find(:xpath, ISRC_TEXT).value
+    end
+
+
 
 
 end

@@ -60,16 +60,16 @@ Feature: Project dashboard
 #     When I click make payment on the billing page
 #     And I
 
-  Scenario: As a user I can see all projects in the projects tab
-    Given I am a logged in user
-    And I am on projects tab
-    Then I can see all my projects
+  # Scenario: As a user I can see all projects in the projects tab
+  #   Given I am a logged in user
+  #   And I am on projects tab
+  #   Then I can see all my projects
 
   Scenario: As a user, I can enter an ISRC as reference
     Given I am a logged in user
-    And I am on a new mastering project
+    And I click new mastering project
     And I have added a file
     When I enter information into the ISRC
-    And I press "next"
-    And I press "back"
-    Then that ISRC information is saved
+    And I press NEXT
+    And I press BACK
+    Then ISRC information is saved
