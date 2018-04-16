@@ -25,6 +25,8 @@ class ProjectDashboard
   ENGINEERS_OPTION = '//*[@id="holder"]/main/div/div[2]/div[1]/div/div/div/ul/li[3]/a/span'
   FIRST_ENGINEERS_OPTION = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div[1]/button'
   SELECTED_CLASS = ".engineers .item.selected button"
+  AUDIO_CHECKBOX = '//*[@id="existing"]/div[1]/div/label/span'
+  ISRC_TEXT = '//*[@id="tracks"]/div/div[1]/div/div[2]/div/input'
 
   def click_button_by_text button_text
     click_button button_text
@@ -134,5 +136,13 @@ class ProjectDashboard
   end
   def get_selected_engineer_colour
     find(SELECTED_CLASS).native.css_value('background-color')
+  end
+
+  def check_audio_checkbox
+    find(:xpath, AUDIO_CHECKBOX).click
+  end
+
+  def read_isrc_text
+    find(:xpath, ISRC_TEXT).value
   end
 end

@@ -140,6 +140,25 @@ Then("I can see all my projects") do
   expect(@project_dashboard.read_project_number_text).to be > 0
 end
 
+Given("I have added a file") do
+  @project_dashboard.check_audio_checkbox
+end
+
+When("I enter information into the ISRC") do
+  @project_dashboard.fill_field_with_text("isrc", "0101010101010")
+end
+
+When("I press NEXT") do
+  @project_dashboard.click_button_by_text('Next')
+end
+
+When("I press BACK") do
+  @project_dashboard.click_link_by_text('Back')
+end
+
+Then("ISRC information is saved") do
+  expect(@project_dashboard.read_isrc_text).to eq '0101010101010'
+end
 Then("I should be redirected to the payments confirmation page") do
   expect(@project_dashboard.get_url).to include "/payment?valid=true&trans_id="
 end
