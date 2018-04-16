@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Feature: Homepage
   # Scenario: As a User from the homepage, I can access online mixing through the online services tab.
   #   Given I am on Abbey Road's homepage
@@ -11,17 +10,3 @@ Feature: Homepage
   #   When I move my mouse over "online services"
   #     And I click "online mastering"
   #   Then I am redirected to online mastering
-=======
-# Feature: Homepage
-#   Scenario: As a User from the homepage, I can access online mixing through the online services tab.
-#     Given I am on Abbey Road's homepage
-#     When I move my mouse over "online services"
-#       And I click "online mixing"
-#     Then I am redirected to online mixing
-#
-#   Scenario: As a User from the homepage, I can access online mixing through the online services tab.
-#     Given I am on Abbey Road's homepage
-#     When I move my mouse over "online services"
-#       And I click "online mastering"
-#     Then I am redirected to online mastering
->>>>>>> dev
