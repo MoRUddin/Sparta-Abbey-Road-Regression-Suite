@@ -3,6 +3,7 @@ require 'capybara/dsl'
 require 'rspec'
 require "date"
 require "pry"
+require "faker"
 require_relative '../lib/ar_service' #require main page file
 
 # The below line of code now means that the chrome driver is registered before every run.

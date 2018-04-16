@@ -27,7 +27,7 @@ Feature: Project dashboard
 
   Scenario:
     Given I am a logged in user
-    And I click new mastering project
-    And I click on extra options section
+      And I click new mastering project
+      And I click on extra options section
     When I select fast track
     Then The remove from basket option appears
