@@ -75,3 +75,24 @@ end
 Then("The remove from basket option appears") do
   expect(@project_dashboard.check_added_to_basket).to eq "item selected"
 end
+
+Given("I have an active project") do
+  "this step does nothing..."
+end
+
+When("I click make payment on the projects tab") do
+  @project_dashboard.click_checkout_project
+end
+
+When("I fill in billing details") do
+  @project_dashboard.fill_in_billing_details(Faker::Name.name,Faker::Address.street_address,Faker::Address.secondary_address,Faker::Address.city,Faker::Address.community,Faker::Address.postcode)
+  sleep 10
+end
+
+When("I click place your order on the billing page") do
+  binding.pry
+end
+
+When("I fill in payment details") do
+  pending # Write code here that turns the phrase above into concrete actions
+end

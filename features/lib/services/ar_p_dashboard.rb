@@ -14,6 +14,8 @@ class ProjectDashboard
     CHECK_ADDED_TO_BASKET_XPATH= '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div/div[1]/div/div'
     SETTINGS_TAB_XPATH = '//*[@id="holder"]/main/div/div[2]/div/div[2]/ul/li[3]/a'
     SETTINGS_NAME_FIELD = "#Name"
+    PROJECT_DISPLAY = "div.project"
+    BILLING_FORM_SCOPE = '//*[@id="billingAddress"]'
 
     def click_button_by_text button_text
       click_button button_text
@@ -79,5 +81,20 @@ class ProjectDashboard
     end
     def get_settings_name
       find(SETTINGS_NAME_FIELD)["value"]
+    end
+    def click_checkout_project
+      all(PROJECT_DISPLAY).last.find("a").click
+    end
+    def fill_in_billing_details name, address1, address2, city, county, postcode
+      within(:xpath, BILLING_FORM_SCOPE) do
+        fill_in 'Addressee', :with => name
+        fill_in 'Address1', :with => address1
+        fill_in 'Address2', :with => address2
+        fill_in 'City', :with => city
+        fill_in 'County', :with => county
+        fill_in 'Postcode', :with => postcode
+        find(:xpath, '//*[@id="billingAddress"]/div[7]/div').click #click dropdown
+        all("ul.selectric-group")[0].all("li")[1].click #click UK
+      end
     end
 end
