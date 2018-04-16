@@ -27,6 +27,7 @@ class ProjectDashboard
   SELECTED_CLASS = ".engineers .item.selected button"
   AUDIO_CHECKBOX = '//*[@id="existing"]/div[1]/div/label/span'
   ISRC_TEXT = '//*[@id="tracks"]/div/div[1]/div/div[2]/div/input'
+  UPLOADED_CHECKBOX = '//*[@id="types"]/li[3]/label/span'
 
   def click_button_by_text button_text
     click_button button_text
@@ -144,5 +145,13 @@ class ProjectDashboard
 
   def read_isrc_text
     find(:xpath, ISRC_TEXT).value
+  end
+
+  def uncheck_uploaded_checkbox
+    find(:xpath, UPLOADED_CHECKBOX).click
+  end
+
+  def get_uploaded_track
+    ('div[data-type = "Uploaded"]')
   end
 end
