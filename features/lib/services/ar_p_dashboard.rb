@@ -22,6 +22,9 @@ class ProjectDashboard
   PROJECT_NUMBER_TEXT = 'div.projects'
   CARD_TYPE_SELECTOR = '//*[@id="holder"]/main/div/div[2]/div/div[2]/div/div[1]/div/div/form/div/div[1]/div[2]/div/div'
   VISA_OPTION = '//*[@id="holder"]/main/div/div[2]/div/div[2]/div/div[1]/div/div/form/div/div[1]/div[2]/div/div/div[3]/div/ul/li[1]'
+  ENGINEERS_OPTION = '//*[@id="holder"]/main/div/div[2]/div[1]/div/div/div/ul/li[3]/a/span'
+  FIRST_ENGINEERS_OPTION = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div[1]/button'
+  SELECTED_CLASS = ".engineers .item.selected button"
 
   def click_button_by_text button_text
     click_button button_text
@@ -122,5 +125,14 @@ class ProjectDashboard
   end
   def read_project_number_text
   find(PROJECT_NUMBER_TEXT)['data-count'].to_i
+  end
+  def click_engineer_option
+    find(:xpath, ENGINEERS_OPTION).click
+  end
+  def click_first_engineer
+    find(:xpath, FIRST_ENGINEERS_OPTION).click
+  end
+  def get_selected_engineer_colour
+    find(SELECTED_CLASS).native.css_value('background-color')
   end
 end
