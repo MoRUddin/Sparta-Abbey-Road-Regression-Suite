@@ -86,6 +86,7 @@ end
 
 Then("the engineers pick button turns to a red remove button") do
   expect(@project_dashboard.get_selected_engineer_colour).to eq "rgba(215, 25, 32, 1)"
+end
 
 Given("I have an active project") do
   "this step does nothing..."

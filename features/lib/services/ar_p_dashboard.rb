@@ -96,6 +96,7 @@ class ProjectDashboard
     end
     def get_selected_engineer_colour
       find(SELECTED_CLASS).native.css_value('background-color')
+    end
     def click_checkout_project
       all(PROJECT_DISPLAY).last.find("a").click
     end
@@ -118,6 +119,7 @@ class ProjectDashboard
       find(:xpath, TEXT_NOTE_FIELD).text
     end
     def read_project_number_text
-    find(PROJECT_NUMBER_TEXT)['data-count'].to_i
+      find(PROJECT_NUMBER_TEXT)['data-count'].to_i
     end
+
 end
