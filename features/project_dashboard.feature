@@ -19,12 +19,8 @@ Feature: Project dashboard
 
   Scenario: As a user I can click TRACKS and view all user tracks
     Given I am a logged in user
-<<<<<<< HEAD
     When I click on the tracks tab
-    Then I am redirected to the tracks where I can see my uploaded tracks
-=======
-  When I click on the tracks tab
-  Then I am redirected to the tracks where I can see my uploaded tracks
+    And I am redirected to the tracks where I can see my uploaded tracks
     And I am on projects tab
     When I click new mixing project
     Then I am redirected to entering new mixing project details
@@ -35,4 +31,3 @@ Feature: Project dashboard
     And I click on extra options section
     When I select fast track
     Then The remove from basket option appears
->>>>>>> dev

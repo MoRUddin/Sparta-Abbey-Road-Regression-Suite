@@ -1,25 +1,15 @@
 class ProjectDashboard
   include Capybara::DSL
 
-<<<<<<< HEAD
     PROJECTS_URL = "https://stagemy.abbeyroad.com/projects"
     MIXING_URL = "https://stage.abbeyroad.com/online-mixing"
+    MASTERING_URL = "http://stage.abbeyroad.com/online-mastering"
     NEW_MASTERING = "New Mastering Project"
     NEW_MASTERING_PROJECT = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div[1]/div[1]/div/div[1]/h5'
     NEW_MIXING = "New Mixing Project"
     NEW_MIXING_PROJECT = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div[1]/div/div/div[1]/h5'
     START_MIXING_PROJECT_BTN = "Start Project"
     CLICK_TRACK_LINK = '//*[@id="holder"]/main/div/div[2]/div/div[2]/ul/li[2]/a'
-=======
-  PROJECTS_URL = "https://stagemy.abbeyroad.com/projects"
-  MIXING_URL = "https://stage.abbeyroad.com/online-mixing"
-  MASTERING_URL = "http://stage.abbeyroad.com/online-mastering"
-  NEW_MASTERING = "New Mastering Project"
-  NEW_MASTERING_PROJECT = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div[1]/div[1]/div/div[1]/h5'
-  NEW_MIXING = "New Mixing Project"
-  NEW_MIXING_PROJECT = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div[1]/div/div/div[1]/h5'
-  START_MIXING_PROJECT_BTN = "Start Project"
->>>>>>> dev
 
   ADD_TO_BASKET_XPATH= '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div/div[1]/div/div/button'
   CHECK_ADDED_TO_BASKET_XPATH= '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div/div[1]/div/div'
@@ -75,7 +65,6 @@ class ProjectDashboard
     find(:xpath, CHECK_ADDED_TO_BASKET_XPATH)["class"]
   end
 
-<<<<<<< HEAD
     def verify_new_mastering
       if find(:xpath, NEW_MASTERING_PROJECT).text == "Existing Tracks"
         return true
@@ -113,6 +102,4 @@ class ProjectDashboard
     def get_url
       current_url
     end
-=======
->>>>>>> dev
 end

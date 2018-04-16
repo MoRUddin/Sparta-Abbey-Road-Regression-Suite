@@ -15,16 +15,14 @@ Feature: Register Login page
       And I click logout
     Then I am redirected to the login page
 
-<<<<<<< HEAD
 # Scenario: As a user I can click my username and logout
 #   Given I am a logged in user
 #   And I am on Abbey Road's homepage
 #   When I click my username
 #   And I click logout
 #   Then I am redirected to the login page
-=======
+
   Scenario:
     Given I am on the online mastering page
     When I click "Upload track"
     Then I am redirected to the login page
->>>>>>> dev
