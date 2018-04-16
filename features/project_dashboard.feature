@@ -64,3 +64,12 @@ Feature: Project dashboard
     Given I am a logged in user
     And I am on projects tab
     Then I can see all my projects
+
+  Scenario: As a user, I can enter an ISRC as reference
+    Given I am a logged in user
+    And I am on a new mastering project
+    And I have added a file
+    When I enter information into the ISRC
+    And I press "next"
+    And I press "back"
+    Then that ISRC information is saved
