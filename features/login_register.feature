@@ -1,4 +1,4 @@
-# Feature: Register Login page
+Feature: Register Login page
 #   Scenario: As a User, I can register
 #     Given I have an email
 #       And I am on the Register Login page

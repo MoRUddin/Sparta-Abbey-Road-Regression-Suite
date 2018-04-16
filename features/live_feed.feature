@@ -4,7 +4,7 @@
 #     When I search "Abbey Road Crossing"
 #       And I click the link "Visit Abbey Road Studios"
 #     Then I am redirected to the Live Feed Page
-# 
+#
 #   Scenario: As a User, I can click on any archived time, so that I can see a video starting from that point.
 #     Given I am on the Live Feed Page
 #     When I click one of the time tabs

@@ -17,6 +17,11 @@ class ProjectDashboard
     ENGINEERS_OPTION = '//*[@id="holder"]/main/div/div[2]/div[1]/div/div/div/ul/li[3]/a/span'
     FIRST_ENGINEERS_OPTION = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div[1]/button'
     SELECTED_CLASS = ".engineers .item.selected button"
+    PROJECT_DISPLAY = "div.project"
+    BILLING_FORM_SCOPE = '//*[@id="billingAddress"]'
+    TITLE_NOTE_FIELD = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/input'
+    TEXT_NOTE_FIELD = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/textarea'
+    PROJECT_NUMBER_TEXT = 'div.projects'
 
     def click_button_by_text button_text
       click_button button_text
@@ -91,5 +96,28 @@ class ProjectDashboard
     end
     def get_selected_engineer_colour
       find(SELECTED_CLASS).native.css_value('background-color')
+    def click_checkout_project
+      all(PROJECT_DISPLAY).last.find("a").click
+    end
+    def fill_in_billing_details name, address1, address2, city, county, postcode
+      within(:xpath, BILLING_FORM_SCOPE) do
+        fill_in 'Addressee', :with => name
+        fill_in 'Address1', :with => address1
+        fill_in 'Address2', :with => address2
+        fill_in 'City', :with => city
+        fill_in 'County', :with => county
+        fill_in 'Postcode', :with => postcode
+        find(:xpath, '//*[@id="billingAddress"]/div[7]/div').click #click dropdown
+        all("ul.selectric-group")[0].all("li")[1].click #click UK
+      end
+    end
+    def check_note_title_text
+      find(:xpath, TITLE_NOTE_FIELD).value
+    end
+    def check_note_text_area_text
+      find(:xpath, TEXT_NOTE_FIELD).text
+    end
+    def read_project_number_text
+    find(PROJECT_NUMBER_TEXT)['data-count'].to_i
     end
 end

@@ -86,4 +86,60 @@ end
 
 Then("the engineers pick button turns to a red remove button") do
   expect(@project_dashboard.get_selected_engineer_colour).to eq "rgba(215, 25, 32, 1)"
+
+Given("I have an active project") do
+  "this step does nothing..."
+end
+
+When("I click make payment on the projects tab") do
+  @project_dashboard.click_checkout_project
+end
+
+When("I fill in billing details") do
+  @project_dashboard.fill_in_billing_details(Faker::Name.name,Faker::Address.street_address,Faker::Address.secondary_address,Faker::Address.city,Faker::Address.community,Faker::Address.postcode)
+  sleep 10
+end
+
+When("I click place your order on the billing page") do
+  binding.pry
+end
+
+When("I fill in payment details") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("I click make payment on the checkout page")do
+  pending
+end
+
+When("I am on the project notes page") do
+  @project_dashboard.click_link_by_text "Project notes"
+end
+
+When("I add the project title") do
+  @project_dashboard.fill_field_with_text("name", "Test Title")
+end
+
+When("I add project notes") do
+  @project_dashboard.fill_field_with_text("notes", "Test Text")
+end
+
+When("I click NEXT") do
+  @project_dashboard.click_link_by_text('Next')
+end
+
+When("I click BACK") do
+  @project_dashboard.click_link_by_text('Back')
+end
+
+Then("The project notes are filled in") do
+  expect(@project_dashboard.check_note_title_text).to eq "Test Title"
+end
+
+And("The project title is filled in") do
+  expect(@project_dashboard.check_note_text_area_text).to eq "Test Text"
+end
+
+Then("I can see all my projects") do
+  expect(@project_dashboard.read_project_number_text).to be > 0
 end
