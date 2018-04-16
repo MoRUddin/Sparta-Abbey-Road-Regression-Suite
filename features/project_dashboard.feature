@@ -31,3 +31,10 @@ Feature: Project dashboard
       And I click on extra options section
     When I select fast track
     Then The remove from basket option appears
+
+  Scenario: As a User, I can select/deselect a specific engineer on my project
+    Given I am a logged in user
+      And I click new mastering project
+      And I am on engineers section
+    When I click pick on one (Alex Gordon)
+    Then the engineers pick button turns to a red remove button
