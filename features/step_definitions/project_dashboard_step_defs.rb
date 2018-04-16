@@ -159,6 +159,32 @@ end
 Then("ISRC information is saved") do
   expect(@project_dashboard.read_isrc_text).to eq '0101010101010'
 end
+
 Then("I should be redirected to the payments confirmation page") do
   expect(@project_dashboard.get_url).to include "/payment?valid=true&trans_id="
+end
+
+Given("I click on extra formats section") do
+  @project_dashboard.click_link_by_text "Extra formats"
+end
+
+When("I click add to basket on the DDPi download") do
+  @project_dashboard.add_ddpi_to_basket
+end
+
+When("I select the track to apply it to") do
+  sleep 1
+  @project_dashboard.click_all_ddpi_tracks
+end
+
+When("I check the confirmation checkbox") do
+  @project_dashboard.click_confirm_ddpi
+end
+
+When('I click "save"') do
+  @project_dashboard.click_link_by_text 'Save'
+end
+
+Then("The remove from basket option appears on the DDPI option") do
+  expect(@project_dashboard.check_added_to_basket).to eq "item selected"
 end

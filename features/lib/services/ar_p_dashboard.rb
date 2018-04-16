@@ -27,6 +27,8 @@ class ProjectDashboard
   SELECTED_CLASS = ".engineers .item.selected button"
   AUDIO_CHECKBOX = '//*[@id="existing"]/div[1]/div/label/span'
   ISRC_TEXT = '//*[@id="tracks"]/div/div[1]/div/div[2]/div/input'
+  DDPI_XPATH_BUTTON = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div/div[1]/div[1]/div/button[1]'
+  DDPI_CHECKBOX = "span.label"
 
   def click_button_by_text button_text
     click_button button_text
@@ -137,12 +139,22 @@ class ProjectDashboard
   def get_selected_engineer_colour
     find(SELECTED_CLASS).native.css_value('background-color')
   end
-
   def check_audio_checkbox
     find(:xpath, AUDIO_CHECKBOX).click
   end
-
   def read_isrc_text
     find(:xpath, ISRC_TEXT).value
+  end
+  def add_ddpi_to_basket
+    find(:xpath,DDPI_XPATH_BUTTON).click
+  end
+  def click_all_ddpi_tracks
+    checks = all(DDPI_CHECKBOX)
+    (0..checks.length-2).each do |i|
+      checks[i].click
+    end
+  end
+  def click_confirm_ddpi
+    all(DDPI_CHECKBOX).last.click
   end
 end
