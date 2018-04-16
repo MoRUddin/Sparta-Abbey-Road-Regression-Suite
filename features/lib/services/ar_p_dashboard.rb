@@ -40,21 +40,12 @@ class ProjectDashboard
         return false
       end
     end
-    def click_new_mixing
-      find_link(NEW_MIXING).click
-    end
-    def click_new_mixing
-      find_link(NEW_MIXING).click
-    end
     def verify_new_mixing
       if find(:xpath, NEW_MIXING_PROJECT).text == "Uploaded Tracks"
         return true
       else
         return false
       end
-    end
-    def start_mixing_project
-      find_link(START_MIXING_PROJECT_BTN).click
     end
     def find_all_links
       all("a")
@@ -65,22 +56,8 @@ class ProjectDashboard
     def check_added_to_basket
       find(:xpath, CHECK_ADDED_TO_BASKET_XPATH)["class"]
     end
-    def verify_new_mastering
-      if find(:xpath, NEW_MASTERING_PROJECT).text == "Existing Tracks"
-        return true
-      else
-        return false
-      end
-    end
     def click_new_mixing
       find_link(NEW_MIXING).click
-    end
-    def verify_new_mixing
-      if find(:xpath, NEW_MIXING_PROJECT).text == "Uploaded Tracks"
-        return true
-      else
-        return false
-      end
     end
     def start_mixing_project
       find_link(START_MIXING_PROJECT_BTN).click

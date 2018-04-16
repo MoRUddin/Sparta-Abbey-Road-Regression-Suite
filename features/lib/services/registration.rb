@@ -30,9 +30,6 @@ class RegisterPage
   def click_button_by_text button_text
     click_button(button_text)
   end
-  def get_url
-    current_url
-  end
   def click_username_link
     click_button(USERNAME_ID)
   end
