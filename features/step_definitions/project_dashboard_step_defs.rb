@@ -75,3 +75,15 @@ end
 Then("The remove from basket option appears") do
   expect(@project_dashboard.check_added_to_basket).to eq "item selected"
 end
+
+Given("I click on engineers section") do
+  @project_dashboard.click_engineer_option
+end
+
+When("I click pick on one Alex Gordon") do
+  @project_dashboard.click_first_engineer
+end
+
+Then("the engineers pick button turns to a red remove button") do
+  expect(@project_dashboard.get_selected_engineer_colour).to eq "rgba(215, 25, 32, 1)"
+end

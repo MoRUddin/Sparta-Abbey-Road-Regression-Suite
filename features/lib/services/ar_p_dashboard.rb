@@ -14,6 +14,9 @@ class ProjectDashboard
     CHECK_ADDED_TO_BASKET_XPATH= '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div/div[1]/div/div'
     SETTINGS_TAB_XPATH = '//*[@id="holder"]/main/div/div[2]/div/div[2]/ul/li[3]/a'
     SETTINGS_NAME_FIELD = "#Name"
+    ENGINEERS_OPTION = '//*[@id="holder"]/main/div/div[2]/div[1]/div/div/div/ul/li[3]/a/span'
+    FIRST_ENGINEERS_OPTION = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div[1]/button'
+    SELECTED_CLASS = ".engineers .item.selected button"
 
     def click_button_by_text button_text
       click_button button_text
@@ -79,5 +82,14 @@ class ProjectDashboard
     end
     def get_settings_name
       find(SETTINGS_NAME_FIELD)["value"]
+    end
+    def click_engineer_option
+      find(:xpath, ENGINEERS_OPTION).click
+    end
+    def click_first_engineer
+      find(:xpath, FIRST_ENGINEERS_OPTION).click
+    end
+    def get_selected_engineer_colour
+      find(SELECTED_CLASS).native.css_value('background-color')
     end
 end
