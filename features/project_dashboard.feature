@@ -32,17 +32,25 @@ Feature: Project dashboard
   #   When I select fast track
   #   Then The remove from basket option appears
 
-  Scenario: As a user I can see all projects in the projects tab
-    Given I am a logged in user
-      And I am on projects tab
-    Then I can see all my projects
+  # Scenario: As a user I can see all projects in the projects tab
+  #   Given I am a logged in user
+  #     And I am on projects tab
+  #   Then I can see all my projects
+  #
+  # Scenario: As a user I can enter my billing address so that I can place my order
+  #   Given I am a logged in user
+  #     And I am on projects tab
+  #     And I can see all my projects
+  #   When I click make payment on the projects tab
+  #     And I fill in billing details
+  #   When I click place your order on the billing page
+  #     And I fill in payment details
+  #   Then I click make payment on the checkout page
 
-  Scenario: As a user I can enter my billing address so that I can place my order
-    Given I am a logged in user
+    Scenario: As a user I can upload my project tracks in .wav so that I can start my project
+      Given I am a logged in user
       And I am on projects tab
-      And I can see all my projects
-    When I click make payment on the projects tab
-      And I fill in billing details
-    When I click place your order on the billing page
-      And I fill in payment details
-    Then I click make payment on the checkout page
+      And I click new mastering project
+      When I click the upload button
+      And I upload my .wav files
+      Then I can see my uploaded project files

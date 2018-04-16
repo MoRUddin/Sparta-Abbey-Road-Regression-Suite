@@ -133,3 +133,15 @@ end
 Then("I can see all my projects") do
   expect(@project_dashboard.read_project_number_text).to be > 0
 end
+
+When("I click the upload button") do
+  @project_dashboard.click_button_by_text('upload')
+end
+
+When("I upload my .wav files") do
+  @project_dashboard.upload_file
+end
+
+Then("I can see my uploaded project files") do
+  pending # Write code here that turns the phrase above into concrete actions
+end

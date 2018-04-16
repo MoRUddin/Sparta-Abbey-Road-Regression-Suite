@@ -109,4 +109,10 @@ class ProjectDashboard
     def read_project_number_text
     find(PROJECT_NUMBER_TEXT)['data-count'].to_i
     end
+
+    def upload_file
+        # attach_file('Image', '/path/to/image.jpg')
+        # attach_file('upload', '/Users/tech-ayy/desktop/Sparta-Abbey-Road-Regression-Suite/features/assets/bass_drum.wav')
+        find(:xpath, '//*[@id="upload"]'.send('/Users/tech-ayy/desktop/Sparta-Abbey-Road-Regression-Suite/features/assets/bass_drum.wav'))
+    end
 end
