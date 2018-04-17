@@ -28,3 +28,7 @@ Then("I am redirected to online mastering") do
   sleep 1
   expect(@homepage.get_url).to eq "https://stage.abbeyroad.com/online-mastering"
 end
+
+Then("I can view their twitter feed") do
+  expect(@homepage.check_for_twitter_embedded).to eq true
+end
