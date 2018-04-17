@@ -1,5 +1,6 @@
 Before do
   @contact_us = contact_us
+  @email_bak = temp_email_bak
 end
 
 Given("I am on the studio 1 page") do
@@ -14,7 +15,7 @@ When("I enter an invalid email") do
   @contact_us.fill_field_with_text("newsletterEmail",Faker::Name.name)
 end
 
-When('I click "join"') do
+When('I click "Join"') do
   @contact_us.click_button_by_text "Join"
 end
 
@@ -60,4 +61,17 @@ end
 
 Then("Their phone number") do
   expect(@contact_us.read_contact_number).to be true
+end
+
+Given("I have a valid email") do
+  @email_bak.visit_homepage
+  @email_bak.save_address
+end
+
+When("I enter a valid email") do
+  @contact_us.fill_field_with_text("newsletterEmail",@email_bak.email_address)
+end
+
+Then("I receive a confirmation message") do
+  expect(@contact_us.email_verification_present).to eq true
 end

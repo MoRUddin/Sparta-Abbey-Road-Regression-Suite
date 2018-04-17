@@ -48,4 +48,7 @@ class ContactUs
   def email_error_present
     page.has_selector?("#newsletterEmail-error")
   end
+  def email_verification_present
+    page.has_selector?("#thanksNewsletterDiv")
+  end
 end
