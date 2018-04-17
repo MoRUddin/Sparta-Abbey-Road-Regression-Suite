@@ -32,6 +32,7 @@ class ProjectDashboard
 
   DDPI_XPATH_BUTTON = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div/div[1]/div[1]/div/button[1]'
   DDPI_CHECKBOX = "span.label"
+  HELP_TAB = '//*[@id="holder"]/main/div/div[2]/div/div[2]/ul/li[4]/a'
 
   def click_button_by_text button_text
     click_button button_text
@@ -175,5 +176,9 @@ class ProjectDashboard
   end
   def click_confirm_ddpi
     all(DDPI_CHECKBOX).last.click
+  end
+
+  def click_help_tab
+    find(:xpath, HELP_TAB).click
   end
 end

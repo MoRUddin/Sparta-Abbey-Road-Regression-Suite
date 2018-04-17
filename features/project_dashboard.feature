@@ -1,4 +1,5 @@
 Feature: Project dashboard
+
   # Scenario: As a user I can select the NEW MASTERING PROJECT button from the projects tab
   #   Given I am a logged in user
   #     And I am on projects tab
@@ -63,7 +64,6 @@ Feature: Project dashboard
   #     And I check the confirmation checkbox
   #     And I click "save"
   #   Then The remove from basket option appears on the DDPI option
-
   #DO NOT RUN BELOW SCENARIO - ONLY FOR DEMONSTRATION (Test can only be run once)
   # Scenario: As a user I can enter my billing address so that I can place my order
   #   Given I am a logged in user
@@ -75,9 +75,21 @@ Feature: Project dashboard
   #     And I fill in payment details
   #   Then I click make payment on the checkout page
   #   And I should be redirected to the payments confirmation page
-
   # Scenario: As a user I can select filters so that I can sort tracks by current status
   # Given I am a logged in user
   #   And I click new mastering project
   # When I uncheck the uploaded checkbox
   # Then The uploaded tracks should disappear from the list
+
+  Scenario: As a user, I can go to the help section to search for answers
+    Given I am a logged in user
+      And I am on projects tab
+    When I click the help tab
+    Then I am taken to the help page
+
+  Scenario: As a user, I can go to the help section and select Account category to find questions
+    Given I am a logged in user
+      And I am on projects tab
+    When I click the help tab
+      And I click account category
+    Then I am redirected to help-account page
