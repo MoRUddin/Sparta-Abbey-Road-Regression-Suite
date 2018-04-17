@@ -19,7 +19,7 @@ When('I search "Abbey Road Studios"') do
 end
 
 When('I click the link "Visit Abbey Road Studios"') do
-  @google.click_search_result "Visit Abbey Road Studios"
+  @google.click_search_result "Abbey Road Studios"
 end
 
 Then("I am redirected to the Live Feed Page") do

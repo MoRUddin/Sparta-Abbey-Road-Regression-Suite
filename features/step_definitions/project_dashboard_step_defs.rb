@@ -174,6 +174,7 @@ Then("The uploaded tracks should disappear from the list") do
       expect(track).not_to eq "Uploaded"
     end
   end
+end
 
 Given("I click on extra formats section") do
   @project_dashboard.click_link_by_text "Extra formats"
