@@ -25,10 +25,6 @@ module AbbeyRoadStage
 
   def contact_us
     ContactUs.new
-
-  def ar_studio_one
-    StudioOne.new
-
   end
 
 end
