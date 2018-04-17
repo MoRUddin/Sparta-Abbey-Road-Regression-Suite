@@ -49,9 +49,21 @@ Feature: Contact Us
   #   Then I can view an integration of google maps
   #   And I can see it points to Abbey Road Studios address by default
 
+  Scenario: As a user, in the the CONTACT US section on live feed page, I can see the point of contacts picture, name, title, phone number, and email.
+    Given I am on the live feed page
+    Then  I can see the point of contact's picture
+      And  Their name
+      And Their job title
+      And  Their phone number
+
+  Scenario: As a user, when I send a message without required field I recieve an error
+    Given I am on the studio 1 page
+    When I try to send a message that's missing a required fields
+    Then I recieve error messages
+
   Scenario: As a user, I can sign up to the newsletter and receive confirmation so I know Abbey Road have received it
-  Given I have a valid email
-    And I am on the studio 1 page
-  When I enter a valid email
-    And I click "Join"
-  Then I receive a confirmation message
+    Given I have a valid email
+      And I am on the studio 1 page
+    When I enter a valid email
+      And I click "Join"
+    Then I receive a confirmation message
