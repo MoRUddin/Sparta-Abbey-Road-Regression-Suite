@@ -12,4 +12,12 @@ class ContactUs
     page.has_text?("UK")
   end
 
+  def check_for_iframe
+    all('iframe')[4].visible?
+  end
+
+  def check_default_location
+    all('iframe')[4]["src"]
+  end
+
 end
