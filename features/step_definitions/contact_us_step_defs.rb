@@ -46,6 +46,10 @@ Given("I am on the Mastering page") do
   @contact_us.visit_url("https://stage.abbeyroad.com/mastering")
 end
 
+Given("I am on the live feed page") do
+  @contact_us.visit_url("https://stage.abbeyroad.com/crossing")
+end
+
 Then("I can see the point of contact's picture") do
   expect(@contact_us.read_contact_picture).to be true
 end
