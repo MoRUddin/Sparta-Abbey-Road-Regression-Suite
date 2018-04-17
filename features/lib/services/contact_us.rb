@@ -2,6 +2,10 @@
 class ContactUs
   include Capybara::DSL
 
+  MESSAGE_ERROR = '#Message-error'
+  NAME_ERROR = '#Name-error'
+  EMAIL_ERROR = '#Email-error'
+
   def visit_url(url)
     visit(url)
   end
@@ -18,6 +22,22 @@ class ContactUs
 
   def check_default_location
     all('iframe')[4]["src"]
+  end
+
+  def click_send_message_button text
+    click_button(text)
+  end
+
+  def find_message_error
+    find(MESSAGE_ERROR).text
+  end
+
+  def find_name_error
+    find(NAME_ERROR).text
+  end
+
+  def find_email_error
+    find(EMAIL_ERROR).text
   end
 
 end
