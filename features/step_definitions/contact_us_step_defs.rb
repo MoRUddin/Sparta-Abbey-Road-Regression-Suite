@@ -21,3 +21,11 @@ end
 Then("I am given a verification error message") do
   expect(@contact_us.email_error_present).to eq true
 end
+
+Then("I can view an integration of google maps") do
+  expect(@contact_us.check_for_iframe).to eq true
+end
+
+Then("I can see it points to Abbey Road Studios address by default") do
+  expect(@contact_us.check_default_location).to include "Abbey%20Road%20Studios"
+end
