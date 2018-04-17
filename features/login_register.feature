@@ -15,7 +15,7 @@ Feature: Register Login page
       And I click logout
     Then I am redirected to the login page
 
-  Scenario:
+  Scenario: As a non-logged in User, I can click "upload"/"start project" and am redirected to login page so that I can start a new mastering project.
     Given I am on the online mastering page
     When I click "Upload track"
     Then I am redirected to the login page

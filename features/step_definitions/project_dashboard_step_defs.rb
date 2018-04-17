@@ -200,3 +200,20 @@ end
 Then("The remove from basket option appears on the DDPI option") do
   expect(@project_dashboard.check_added_to_basket).to eq "item selected"
 end
+
+When("I click the help tab") do
+  @project_dashboard.click_help_tab
+end
+
+Then("I am taken to the help page") do
+  expect(@project_dashboard.get_url).to eq "https://stage.abbeyroad.com/help"
+end
+
+When("I click account category") do
+  @project_dashboard.click_link_by_text 'Account'
+  sleep 1
+end
+
+Then("I am redirected to help-account page") do
+  expect(@project_dashboard.get_url).to eq "https://stage.abbeyroad.com/help/account"
+end
