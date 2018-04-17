@@ -48,4 +48,20 @@ class ContactUs
   def email_error_present
     page.has_selector?("#newsletterEmail-error")
   end
+
+  def type_message_in_contact_section
+    fill_in 'Message', :with => 'Testing Testing'
+  end
+
+  def type_name_in_contact_section
+    fill_in 'Name', :with => 'Testing Testerton'
+  end
+
+  def type_email_in_contact_section
+    fill_in 'Email', :with => 'sp_ar_test@yahoo.com'
+  end
+
+  def confirmation_contact_section
+    page.has_text?('Thank you for your message. I will get back to you as soon as possible.')
+  end
 end

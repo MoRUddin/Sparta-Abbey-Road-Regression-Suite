@@ -61,3 +61,23 @@ end
 Then("Their phone number") do
   expect(@contact_us.read_contact_number).to be true
 end
+
+When("I input my name") do
+  @contact_us.type_name_in_contact_section
+end
+
+When("I enter my email") do
+  @contact_us.type_email_in_contact_section
+end
+
+When("I enter my message") do
+  @contact_us.type_message_in_contact_section
+end
+
+When("I successfully send the message") do
+  @contact_us.click_button_by_text "Send message"
+end
+
+Then("I see a div with a confirmation message") do
+  expect(@contact_us.confirmation_contact_section).to eq true
+end
