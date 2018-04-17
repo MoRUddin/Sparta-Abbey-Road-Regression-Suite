@@ -217,3 +217,21 @@ end
 Then("I am redirected to help-account page") do
   expect(@project_dashboard.get_url).to eq "https://stage.abbeyroad.com/help/account"
 end
+
+Given("I have added two project files") do
+  @project_dashboard.check_audio_checkbox
+  @project_dashboard.check_audio_checkbox_second_file
+end
+
+When("I click add to basket on the LP album") do
+  @project_dashboard.add_lp_to_basket
+end
+
+When("I drag a track to side B") do
+  @project_dashboard.drag_to_side_b
+end
+
+Then("the remove from basket option appears") do
+  sleep 1
+  expect(@project_dashboard.check_lp_added_to_basket).to eq "item selected"
+end

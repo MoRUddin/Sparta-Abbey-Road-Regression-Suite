@@ -12,6 +12,7 @@ class ProjectDashboard
   CLICK_TRACK_LINK = '//*[@id="holder"]/main/div/div[2]/div/div[2]/ul/li[2]/a'
   ADD_TO_BASKET_XPATH= '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div/div[1]/div/div/button'
   CHECK_ADDED_TO_BASKET_XPATH= '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div/div[1]/div/div'
+  CHECK_ADDED_LP_TO_BASKET_XPATH= '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div/div[1]/div[4]/div'
   SETTINGS_TAB_XPATH = '//*[@id="holder"]/main/div/div[2]/div/div[2]/ul/li[3]/a'
   SETTINGS_NAME_FIELD = "#Name"
   PROJECT_DISPLAY = "div.project"
@@ -26,11 +27,11 @@ class ProjectDashboard
   FIRST_ENGINEERS_OPTION = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div[1]/button'
   SELECTED_CLASS = ".engineers .item.selected button"
   AUDIO_CHECKBOX = '//*[@id="existing"]/div[1]/div/label/span'
+  AUDIO_CHECKBOX_SECOND_FILE = '//*[@id="existing"]/div[2]/div/label/span'
   ISRC_TEXT = '//*[@id="tracks"]/div/div[1]/div/div[2]/div/input'
-
   UPLOADED_CHECKBOX = '//*[@id="types"]/li[3]/label/span'
-
   DDPI_XPATH_BUTTON = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div/div[1]/div[1]/div/button[1]'
+  LP_XPATH_BUTTON = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div/div[1]/div[4]/div/button[1]'
   DDPI_CHECKBOX = "span.label"
   HELP_TAB = '//*[@id="holder"]/main/div/div[2]/div/div[2]/ul/li[4]/a'
 
@@ -181,4 +182,23 @@ class ProjectDashboard
   def click_help_tab
     find(:xpath, HELP_TAB).click
   end
+
+  def check_audio_checkbox_second_file
+    find(:xpath, AUDIO_CHECKBOX_SECOND_FILE).click
+  end
+
+  def add_lp_to_basket
+    find(:xpath,LP_XPATH_BUTTON).click
+  end
+
+  def drag_to_side_b
+    source = page.find(:xpath,'//*[@id="side-1"]/li[2]')
+    target = page.find('#side-2')
+    source.drag_to(target)
+  end
+
+  def check_lp_added_to_basket
+    find(:xpath, CHECK_ADDED_LP_TO_BASKET_XPATH)["class"]
+  end
+
 end
