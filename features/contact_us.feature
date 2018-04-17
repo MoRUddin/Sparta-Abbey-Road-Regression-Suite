@@ -6,4 +6,5 @@ Feature: Contact Us
   Scenario: As a user I can only enter a valid email into the newsletter sign up, else be rejected
     Given I am on the studio 1 page
     When I enter an invalid email
+      And I click "join"
     Then I am given a verification error message
