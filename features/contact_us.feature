@@ -49,8 +49,40 @@ Feature: Contact Us
 #     Then I can view an integration of google maps
 #     And I can see it points to Abbey Road Studios address by default
 #
-  Scenario: As a User, I can send off a message successfully and receive a confirmation message.
+  Scenario: As a User on Studio 1, I can send off a message successfully and receive a confirmation message.
     Given I am on the studio 1 page
+    When I input my name
+      And I enter my email
+      And I enter my message
+      And I successfully send the message
+    Then I see a div with a confirmation message
+
+  Scenario: As a User on Studio 2, I can send off a message successfully and receive a confirmation message.
+    Given I am on the studio 2 page
+    When I input my name
+      And I enter my email
+      And I enter my message
+      And I successfully send the message
+    Then I see a div with a confirmation message
+
+  Scenario: As a User on Studio 3, I can send off a message successfully and receive a confirmation message.
+    Given I am on the studio 3 page
+    When I input my name
+      And I enter my email
+      And I enter my message
+      And I successfully send the message
+    Then I see a div with a confirmation message
+
+  Scenario: As a User on Recording & Mixing page, I can send off a message successfully and receive a confirmation message.
+    Given I am on the Recording & Mixing page
+    When I input my name
+      And I enter my email
+      And I enter my message
+      And I successfully send the message
+    Then I see a div with a confirmation message
+
+  Scenario: As a User on Mastering page, I can send off a message successfully and receive a confirmation message.
+    Given I am on the Mastering page
     When I input my name
       And I enter my email
       And I enter my message
