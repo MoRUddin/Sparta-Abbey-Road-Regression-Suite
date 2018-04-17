@@ -38,6 +38,13 @@ Feature: Contact Us
       And Their job title
       And  Their phone number
 
+  Scenario: As a user, in the the CONTACT US section on live feed page, I can see the point of contacts picture, name, title, phone number, and email.
+    Given I am on the live feed page
+    Then  I can see the point of contact's picture
+      And  Their name
+      And Their job title
+      And  Their phone number
+
   Scenario: As a user I can only enter a valid email into the newsletter sign up, else be rejected
     Given I am on the studio 1 page
     When I enter an invalid email
