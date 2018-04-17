@@ -77,4 +77,7 @@ class ContactUs
   def email_verification_present
     page.has_selector?("#thanksNewsletterDiv")
   end
+
+
+
 end
