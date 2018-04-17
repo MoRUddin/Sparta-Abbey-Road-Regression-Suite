@@ -32,3 +32,11 @@ end
 Then("I can view their twitter feed") do
   expect(@homepage.check_for_twitter_embedded).to eq true
 end
+
+Then("I can view their instagram feed") do
+  expect(@homepage.check_for_instagram_embedded).to eq true
+end
+
+Then("I can view 6 images on instagram feed") do
+expect(@homepage.count_instagram_images).to have_selector('img', count: 6)
+end

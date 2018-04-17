@@ -11,6 +11,14 @@ Feature: Homepage
   #     And I click "online mastering"
   #   Then I am redirected to online mastering
 
-  Scenario: As I user I should see twitter embedded on the Homepage
+  # Scenario: As I user I should see twitter embedded on the Homepage
+  #   Given I am on Abbey Road's homepage
+  #   Then I can view their twitter feed
+  #
+  # Scenario: As a user I should see instagram embedded on the Homepage
+  #   Given I am on Abbey Road's homepage
+  #   Then I can view their instagram feed
+
+  Scenario: As a user I can see 6 images on the instagram widget
     Given I am on Abbey Road's homepage
-    Then I can view their twitter feed
+    Then I can view 6 images on instagram feed
