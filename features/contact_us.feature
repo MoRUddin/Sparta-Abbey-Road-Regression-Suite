@@ -3,6 +3,13 @@ Feature: Contact Us
     Given: I am on the studio 1 page
     Then: I can see the studio's address
 
+  Scenario: As a user, in the the CONTACT US section on Studio 1 page, I can see the point of contacts picture, name, title, phone number, and email.
+    Given I am on the studio 1 page
+    Then  I can see the point of contact's picture
+      And  Their name
+      And Their job title
+      And  Their phone number
+
   Scenario: As a user, in the the CONTACT US section on Studio 2 page, I can see the point of contacts picture, name, title, phone number, and email.
     Given I am on the studio 2 page
     Then  I can see the point of contact's picture
