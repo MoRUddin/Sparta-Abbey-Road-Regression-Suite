@@ -7,5 +7,5 @@ Given("I am on the studio 1 page") do
 end
 
 Then("I can see the studio's address") do
-  @contact_us.
+  expect(@contact_us.abbey_road_address).to eq true
 end

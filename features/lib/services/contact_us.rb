@@ -7,6 +7,9 @@ class ContactUs
   end
   def abbey_road_address
     page.has_text?('3 Abbey Road')
+    page.has_text?("London")
+    page.has_text?("NW8 9AY")
+    page.has_text?("UK")
   end
 
 end
