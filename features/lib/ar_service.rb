@@ -22,8 +22,13 @@ module AbbeyRoadStage
   def ar_registration
     RegisterPage.new
   end
+
   def contact_us
     ContactUs.new
+
+  def ar_studio_one
+    StudioOne.new
+
   end
 
 end
