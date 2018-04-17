@@ -168,5 +168,9 @@ When("I uncheck the uploaded checkbox") do
 end
 
 Then("The uploaded tracks should disappear from the list") do
-  expect(page).not_to have_selector("#existing > div:nth-child(1)")
+  if @project_dashboard.check_if_tracks_are_present
+    @project_dashboard.track_status.each do |track|
+      expect(track).not_to eq "Uploaded"
+    end
+  end
 end

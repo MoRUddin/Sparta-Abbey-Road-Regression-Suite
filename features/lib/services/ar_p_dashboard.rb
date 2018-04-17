@@ -138,20 +138,26 @@ class ProjectDashboard
   def get_selected_engineer_colour
     find(SELECTED_CLASS).native.css_value('background-color')
   end
-
   def check_audio_checkbox
     find(:xpath, AUDIO_CHECKBOX).click
   end
-
   def read_isrc_text
     find(:xpath, ISRC_TEXT).value
   end
-
   def uncheck_uploaded_checkbox
     find(:xpath, UPLOADED_CHECKBOX).click
   end
-
   def get_uploaded_track
     ('div[data-type = "Uploaded"]')
+  end
+  def check_if_tracks_are_present
+    find("#existing").has_selector?("div.track")
+  end
+  def track_status
+    arr = []
+    all("div.track").each do |track|
+      arr.push(track["data-type"])
+    end
+    arr
   end
 end
