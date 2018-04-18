@@ -8,6 +8,7 @@ class AbbeyRoadHomepage
   ONLINE_MIXING_OPTION = "//*[@id='holder']/div[1]/div/div[2]/ul/li[1]/ul/li/a"
   ONLINE_MASTERING_OPTION = "//*[@id='holder']/div[1]/div/div[2]/ul/li[2]/ul/li/a"
   EMBEDDED_TWITTER = '#twitter-widget-0'
+  EMBEDDED_INSTAGRAM = 'section.widget.instagram'
 
   def get_url
     current_url
@@ -32,5 +33,12 @@ class AbbeyRoadHomepage
   end
   def check_for_youtube_embedded
     puts('iframe').native.attribute('outerHTML')
+  end
+  def check_for_instagram_embedded
+    find(EMBEDDED_INSTAGRAM).visible?
+  end
+
+  def count_instagram_images
+    find('div.posts')
   end
 end
