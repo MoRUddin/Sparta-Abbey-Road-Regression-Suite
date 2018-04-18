@@ -15,15 +15,14 @@ Feature: Homepage
   #   Given I am on Abbey Road's homepage
   #   Then I can view their twitter feed
   #
-  Scenario: As a user I should see instagram embedded on the Homepage
-    Given I am on Abbey Road's homepage
-    Then I can view their instagram feed
-
-  Scenario: As a user I can see 6 images on the instagram widget
-    Given I am on Abbey Road's homepage
-    Then I can view their twitter feed
+  # Scenario: As a user I should see instagram embedded on the Homepage
+  #   Given I am on Abbey Road's homepage
+  #   Then I can view their instagram feed
+  #
+  # Scenario: As a user I can see 6 images on the instagram widget
+  #   Given I am on Abbey Road's homepage
+  #   Then I can view 6 images on instagram feed
 
   Scenario: As I user I should see 3 youtube videos on the Studio 1 Page
     Given I am on the studio 1 page
-    Then I can view their youtube videos
-    Then I can view 6 images on instagram feed
+    Then I can view their 3 youtube videos

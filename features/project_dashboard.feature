@@ -93,15 +93,15 @@ Feature: Project dashboard
 #     When I click the help tab
 #       And I click account category
 #     Then I am redirected to help-account page
-
-  Scenario: As a user, I can select additional formats to add an LP vinyl to my order
-  Given I am a logged in user
-    And I click new mastering project
-    And I have added two project files
-    And I click on extra formats section
-  When I click add to basket on the LP album
-    And I select the track to apply it to
-    And I drag a track to side B
-    And I check the confirmation checkbox
-    And I click "save"
-  Then the remove from basket option appears
+  #
+  # Scenario: As a user, I can select additional formats to add an LP vinyl to my order
+  # Given I am a logged in user
+  #   And I click new mastering project
+  #   And I have added two project files
+  #   And I click on extra formats section
+  # When I click add to basket on the LP album
+  #   And I select the track to apply it to
+  #   And I drag a track to side B
+  #   And I check the confirmation checkbox
+  #   And I click "save"
+  # Then the remove from basket option appears

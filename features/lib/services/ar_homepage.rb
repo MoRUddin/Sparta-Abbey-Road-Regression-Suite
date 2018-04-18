@@ -7,8 +7,9 @@ class AbbeyRoadHomepage
   ONLINE_SERVICES_TAB = "//*[@id='holder']/nav[1]/div/ul[1]/li[3]/a"
   ONLINE_MIXING_OPTION = "//*[@id='holder']/div[1]/div/div[2]/ul/li[1]/ul/li/a"
   ONLINE_MASTERING_OPTION = "//*[@id='holder']/div[1]/div/div[2]/ul/li[2]/ul/li/a"
-  EMBEDDED_TWITTER = '#twitter-widget-0'
-  EMBEDDED_INSTAGRAM = 'section.widget.instagram'
+  EMBEDDED_TWITTER = "#twitter-widget-0"
+  EMBEDDED_INSTAGRAM = "section.widget.instagram"
+  EMBEDDED_YOUTUBE = "div.content.below.three"
 
   def get_url
     current_url
@@ -31,8 +32,8 @@ class AbbeyRoadHomepage
   def check_for_twitter_embedded
     find(EMBEDDED_TWITTER).visible?
   end
-  def check_for_youtube_embedded
-    puts('iframe').native.attribute('outerHTML')
+  def check_for_youtube_embedded count
+    find("div.content.below.three").has_selector?("iframe", count: count)
   end
   def check_for_instagram_embedded
     find(EMBEDDED_INSTAGRAM).visible?

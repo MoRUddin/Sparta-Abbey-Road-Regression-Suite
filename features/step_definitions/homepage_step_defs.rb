@@ -33,10 +33,8 @@ Then("I can view their twitter feed") do
   expect(@homepage.check_for_twitter_embedded).to eq true
 end
 
-Then("I can view their youtube videos") do
-  # expect(@hompage.)
-  # expect(@hompage.check_for_youtube_embedded).to eq true
-  @hompage.check_for_youtube_embedded
+Then("I can view their 3 youtube videos") do
+  expect(@homepage.check_for_youtube_embedded(3)).to eq true
 end
 
 Then("I can view their instagram feed") do
@@ -44,5 +42,5 @@ Then("I can view their instagram feed") do
 end
 
 Then("I can view 6 images on instagram feed") do
-expect(@homepage.count_instagram_images).to have_selector('img', count: 6)
+expect(@homepage.count_instagram_images).to have_selector("img", count: 6)
 end
