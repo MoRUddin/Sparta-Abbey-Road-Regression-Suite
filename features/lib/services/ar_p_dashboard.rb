@@ -34,6 +34,7 @@ class ProjectDashboard
   LP_XPATH_BUTTON = '//*[@id="holder"]/main/div/div[2]/div[2]/div[2]/div/div[1]/div[4]/div/button[1]'
   DDPI_CHECKBOX = "span.label"
   HELP_TAB = '//*[@id="holder"]/main/div/div[2]/div/div[2]/ul/li[4]/a'
+  SHIPPING_CHECKBOX_XPATH = '//*[@id="holder"]/main/div/div[2]/div/div[2]/div/div[1]/div[3]/div[1]/div/div'
 
   def click_button_by_text button_text
     click_button button_text
@@ -67,9 +68,6 @@ class ProjectDashboard
       return false
     end
   end
-  def find_all_links
-    all("a")
-  end
   def add_fast_track_to_basket
     find(:xpath, ADD_TO_BASKET_XPATH).click
   end
@@ -101,7 +99,7 @@ class ProjectDashboard
     find(SETTINGS_NAME_FIELD)["value"]
   end
   def click_checkout_project
-    all(PROJECT_DISPLAY)[-4].find("a").click #change to last non purchased project
+    find(PROJECT_DISPLAY).find("a").click #change to last non purchased project
   end
   def fill_in_billing_details name, address1, address2, city, county, postcode
     within(:xpath, BILLING_FORM_SCOPE) do
@@ -199,6 +197,9 @@ class ProjectDashboard
 
   def check_lp_added_to_basket
     find(:xpath, CHECK_ADDED_LP_TO_BASKET_XPATH)["class"]
+  end
+  def click_shipping_as_billing_checkbox
+    find(:xpath,SHIPPING_CHECKBOX_XPATH).click
   end
 
 end

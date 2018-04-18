@@ -10,6 +10,7 @@ class AbbeyRoadHomepage
   EMBEDDED_TWITTER = "#twitter-widget-0"
   EMBEDDED_INSTAGRAM = "section.widget.instagram"
   EMBEDDED_YOUTUBE = "div.content.below.three"
+  EMBEDDED_SPOTIFY = '//*[@id="holder"]/main/div/div/section[10]/div'
 
   def get_url
     current_url
@@ -33,13 +34,16 @@ class AbbeyRoadHomepage
     find(EMBEDDED_TWITTER).visible?
   end
   def check_for_youtube_embedded count
-    find("div.content.below.three").has_selector?("iframe", count: count)
+    find(EMBEDDED_YOUTUBE).has_selector?("iframe", count: count)
   end
   def check_for_instagram_embedded
     find(EMBEDDED_INSTAGRAM).visible?
   end
-
-  def count_instagram_images
-    find('div.posts')
+  def count_instagram_images count
+    find('div.posts').has_selector?("img", count: count)
   end
+  def check_for_spotify_embedded count
+    find(:xpath,EMBEDDED_SPOTIFY).has_selector?("iframe", count: count)
+  end
+
 end

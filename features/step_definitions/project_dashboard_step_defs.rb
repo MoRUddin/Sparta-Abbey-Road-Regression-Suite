@@ -198,6 +198,7 @@ When('I click "save"') do
 end
 
 Then("The remove from basket option appears on the DDPI option") do
+  sleep 2
   expect(@project_dashboard.check_added_to_basket).to eq "item selected"
 end
 
@@ -206,6 +207,7 @@ When("I click the help tab") do
 end
 
 Then("I am taken to the help page") do
+  sleep 1
   expect(@project_dashboard.get_url).to eq "https://stage.abbeyroad.com/help"
 end
 
@@ -234,4 +236,8 @@ end
 Then("the remove from basket option appears") do
   sleep 1
   expect(@project_dashboard.check_lp_added_to_basket).to eq "item selected"
+end
+
+When('I check the "use same as billing address" checkbox') do
+  @project_dashboard.click_shipping_as_billing_checkbox
 end

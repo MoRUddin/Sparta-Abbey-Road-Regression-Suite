@@ -42,5 +42,9 @@ Then("I can view their instagram feed") do
 end
 
 Then("I can view 6 images on instagram feed") do
-expect(@homepage.count_instagram_images).to have_selector("img", count: 6)
+expect(@homepage.count_instagram_images(6)).to eq true
+end
+
+Then("I can see 3 spotify players") do
+  expect(@homepage.check_for_spotify_embedded(3)).to eq true
 end

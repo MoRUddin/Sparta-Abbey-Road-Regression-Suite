@@ -39,7 +39,7 @@ When("I click logout") do
 end
 
 Then("I am redirected to the login page") do
-  @project_dashboard.find_all_links
+  sleep 2
   expect(@registration.get_url).to include "https://stagemy.abbeyroad.com/account/login"
 end
 

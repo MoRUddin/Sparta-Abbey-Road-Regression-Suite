@@ -125,5 +125,6 @@ When("I click Post") do
 end
 
 Then("I am shown an error modal") do
+  sleep 1
   expect(@live_feed.error_modal_button_visible).to be true
 end
