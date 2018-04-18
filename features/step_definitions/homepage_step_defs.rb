@@ -5,6 +5,7 @@ Before do
   @email = temp_email
   @project_dashboard = ar_p_dashboard
   @reg = ar_registration
+  current_window.resize_to(1280,960)
 end
 
 When('I move my mouse over "online services"') do

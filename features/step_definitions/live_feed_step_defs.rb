@@ -4,6 +4,7 @@ Before do
   @google = google_search
   @email = temp_email
   @project_dashboard = ar_p_dashboard
+  current_window.resize_to(1280,960)
 end
 
 Given("I am on Google's search page") do

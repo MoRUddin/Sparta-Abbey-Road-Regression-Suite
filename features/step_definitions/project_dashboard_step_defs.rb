@@ -5,6 +5,7 @@ Before do
   @email = temp_email
   @project_dashboard = ar_p_dashboard
   @reg = ar_registration
+  current_window.resize_to(1280,960)
 end
 
 Given("I am a logged in user") do
@@ -50,7 +51,7 @@ When("I click on the tracks tab") do
 end
 
 Then("I am redirected to the tracks where I can see my uploaded tracks") do
-  @project_dashboard.find_track_link
+  sleep 1
   expect(get_url).to eq "https://stagemy.abbeyroad.com/tracks"
 end
 
@@ -80,6 +81,7 @@ Given("I click on engineers section") do
 end
 
 When("I click pick on one Alex Gordon") do
+  sleep 1
   @project_dashboard.click_first_engineer
 end
 

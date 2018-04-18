@@ -1,6 +1,7 @@
 Before do
   @registration = ar_registration
   @email = temp_email
+  current_window.resize_to(1280,960)
 end
 
 Given("I am on the Register Login page") do
@@ -26,8 +27,8 @@ Then("I recieve a verification email") do
 end
 
 Then("clicking the link redirects to the confirmation page") do
-  @email.visit_url(@email.get_validation_link)
-  expect(@email.get_url).to include "https://stagemy.abbeyroad.com/account/confirmemail?userId"
+  visit_url(@email.get_validation_link)
+  expect(get_url).to include "https://stagemy.abbeyroad.com/account/confirmemail?userId"
 end
 
 When("I click my username") do

@@ -1,6 +1,7 @@
 Before do
   @contact_us = contact_us
   @email_bak = temp_email_bak
+  current_window.resize_to(1280,960)
 end
 
 Given("I am on the studio 1 page") do
