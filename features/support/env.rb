@@ -1,5 +1,4 @@
 require 'capybara/cucumber'
-require 'capybara/poltergeist'
 require 'capybara/dsl'
 require 'rspec'
 require "date"
@@ -29,11 +28,6 @@ Capybara.configure do |config|
     Capybara.default_driver = :safari
     Capybara.register_driver :safari do |app|
       Capybara::Selenium::Driver.new(app, :browser => :safari)
-    end
-  elsif
-    Capybara.default_driver = :poltergeist
-    Capybara.register_driver :poltergeist do |app|
-      Capybara::Poltergeist::Driver.new(app, options)
     end
   end
 end
