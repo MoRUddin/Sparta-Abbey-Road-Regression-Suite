@@ -12,7 +12,4 @@ class GoogleSearch
   def fill_search_field search_query
     fill_in(SEARCH_FIELD_ID, with: search_query).send_keys(:enter)
   end
-  def click_search_result text
-    click_link text
-  end
 end

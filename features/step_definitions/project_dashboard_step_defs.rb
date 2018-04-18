@@ -10,7 +10,7 @@ end
 Given("I am a logged in user") do
   @reg.visit_registration_page
   @reg.fill_in_login_form("sp_ar_test@yahoo.com","Thisissparta1")
-  @registration.click_button_by_text "Login"
+  click_button_by_text "Login"
 end
 
 Given("I am on projects tab") do
@@ -51,7 +51,7 @@ end
 
 Then("I am redirected to the tracks where I can see my uploaded tracks") do
   @project_dashboard.find_track_link
-  expect(@project_dashboard.get_url).to eq "https://stagemy.abbeyroad.com/tracks"
+  expect(get_url).to eq "https://stagemy.abbeyroad.com/tracks"
 end
 
 Given("I am on the online mastering page") do
@@ -59,11 +59,11 @@ Given("I am on the online mastering page") do
 end
 
 When('I click "Upload track"') do
-  @project_dashboard.click_link_by_text("Upload track")
+  click_link_by_text("Upload track")
 end
 
 Given("I click on extra options section") do
-  @project_dashboard.click_link_by_text "Extra Options"
+  click_link_by_text "Extra Options"
 end
 
 When("I select fast track") do
@@ -97,7 +97,7 @@ end
 
 When("I click place your order on the billing page") do
   sleep 2
-  @project_dashboard.click_button_by_text "Place your order"
+  click_button_by_text "Place your order"
 end
 
 When("I fill in payment details") do
@@ -105,27 +105,27 @@ When("I fill in payment details") do
 end
 
 Then("I click make payment on the checkout page")do
-  @project_dashboard.click_button_by_text "Make payment"
+  click_button_by_text "Make payment"
 end
 
 When("I am on the project notes page") do
-  @project_dashboard.click_link_by_text "Project notes"
+  click_link_by_text "Project notes"
 end
 
 When("I add the project title") do
-  @project_dashboard.fill_field_with_text("name", "Test Title")
+  fill_field_with_text("name", "Test Title")
 end
 
 When("I add project notes") do
-  @project_dashboard.fill_field_with_text("notes", "Test Text")
+  fill_field_with_text("notes", "Test Text")
 end
 
 When("I click NEXT") do
-  @project_dashboard.click_link_by_text('Next')
+  click_link_by_text('Next')
 end
 
 When("I click BACK") do
-  @project_dashboard.click_link_by_text('Back')
+  click_link_by_text('Back')
 end
 
 Then("The project notes are filled in") do
@@ -145,15 +145,15 @@ Given("I have added a file") do
 end
 
 When("I enter information into the ISRC") do
-  @project_dashboard.fill_field_with_text("isrc", "0101010101010")
+  fill_field_with_text("isrc", "0101010101010")
 end
 
 When("I press NEXT") do
-  @project_dashboard.click_button_by_text('Next')
+  click_button_by_text('Next')
 end
 
 When("I press BACK") do
-  @project_dashboard.click_link_by_text('Back')
+  click_link_by_text('Back')
 end
 
 Then("ISRC information is saved") do
@@ -161,14 +161,17 @@ Then("ISRC information is saved") do
 end
 
 Then("I should be redirected to the payments confirmation page") do
-  expect(@project_dashboard.get_url).to include "/payment?valid=true&trans_id="
+  sleep 1
+  expect(get_url).to include "/payment?valid=true&trans_id="
 end
 
 When("I uncheck the uploaded checkbox") do
+  sleep 1
   @project_dashboard.uncheck_uploaded_checkbox
 end
 
 Then("The uploaded tracks should disappear from the list") do
+  sleep 1
   if @project_dashboard.check_if_tracks_are_present
     @project_dashboard.track_status.each do |track|
       expect(track).not_to eq "Uploaded"
@@ -177,7 +180,7 @@ Then("The uploaded tracks should disappear from the list") do
 end
 
 Given("I click on extra formats section") do
-  @project_dashboard.click_link_by_text "Extra formats"
+  click_link_by_text "Extra formats"
 end
 
 When("I click add to basket on the DDPi download") do
@@ -194,7 +197,7 @@ When("I check the confirmation checkbox") do
 end
 
 When('I click "save"') do
-  @project_dashboard.click_link_by_text 'Save'
+  click_link_by_text 'Save'
 end
 
 Then("The remove from basket option appears on the DDPI option") do
@@ -208,16 +211,16 @@ end
 
 Then("I am taken to the help page") do
   sleep 1
-  expect(@project_dashboard.get_url).to eq "https://stage.abbeyroad.com/help"
+  expect(get_url).to eq "https://stage.abbeyroad.com/help"
 end
 
 When("I click account category") do
-  @project_dashboard.click_link_by_text 'Account'
+  click_link_by_text 'Account'
   sleep 1
 end
 
 Then("I am redirected to help-account page") do
-  expect(@project_dashboard.get_url).to eq "https://stage.abbeyroad.com/help/account"
+  expect(get_url).to eq "https://stage.abbeyroad.com/help/account"
 end
 
 Given("I have added two project files") do

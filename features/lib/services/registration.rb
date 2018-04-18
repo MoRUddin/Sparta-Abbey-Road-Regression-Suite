@@ -6,9 +6,6 @@ class RegisterPage
   LOGIN_SCOPE = '//*[@id="login"]'
   USERNAME_ID = 'name'
 
-  def get_url
-    current_url
-  end
   def visit_registration_page
     visit(REGISTER_URL)
   end
@@ -26,9 +23,6 @@ class RegisterPage
       fill_in 'Email', :with => email
       fill_in 'Password', :with => password
     end
-  end
-  def click_button_by_text button_text
-    click_button(button_text)
   end
   def click_username_link
     click_button(USERNAME_ID)

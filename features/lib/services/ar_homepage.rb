@@ -12,9 +12,6 @@ class AbbeyRoadHomepage
   EMBEDDED_YOUTUBE = "div.content.below.three"
   EMBEDDED_SPOTIFY = '//*[@id="holder"]/main/div/div/section[10]/div'
 
-  def get_url
-    current_url
-  end
   def visit_ar_homepage
     visit(AR_HOMEPAGE_URL)
   end

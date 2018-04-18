@@ -4,7 +4,7 @@ Before do
 end
 
 Given("I am on the studio 1 page") do
-  @contact_us.visit_url("https://stage.abbeyroad.com/studio-one")
+  visit_url("https://stage.abbeyroad.com/studio-one")
 end
 
 Then("I can see the studio's address") do
@@ -12,11 +12,11 @@ Then("I can see the studio's address") do
 end
 
 When("I enter an invalid email") do
-  @contact_us.fill_field_with_text("newsletterEmail",Faker::Name.name)
+  fill_field_with_text("newsletterEmail",Faker::Name.name)
 end
 
 When('I click "Join"') do
-  @contact_us.click_button_by_text "Join"
+  click_button_by_text "Join"
 end
 
 Then("I am given a verification error message") do
@@ -33,7 +33,7 @@ end
 
 
 When("I try to send a message that's missing a required fields") do
-  @contact_us.click_send_message_button 'Send message'
+  click_button_by_text 'Send message'
 end
 
 Then("I recieve error messages") do
@@ -43,23 +43,23 @@ Then("I recieve error messages") do
 end
 
 Given("I am on the studio 2 page") do
-  @contact_us.visit_url("https://stage.abbeyroad.com/studio-two")
+  visit_url("https://stage.abbeyroad.com/studio-two")
 end
 
 Given("I am on the studio 3 page") do
-  @contact_us.visit_url("https://stage.abbeyroad.com/studio-three")
+  visit_url("https://stage.abbeyroad.com/studio-three")
 end
 
 Given("I am on the Recording & Mixing page") do
-  @contact_us.visit_url("https://stage.abbeyroad.com/recording-mixing")
+  visit_url("https://stage.abbeyroad.com/recording-mixing")
 end
 
 Given("I am on the Mastering page") do
-  @contact_us.visit_url("https://stage.abbeyroad.com/mastering")
+  visit_url("https://stage.abbeyroad.com/mastering")
 end
 
 Given("I am on the live feed page") do
-  @contact_us.visit_url("https://stage.abbeyroad.com/crossing")
+  visit_url("https://stage.abbeyroad.com/crossing")
 end
 
 Then("I can see the point of contact's picture") do
@@ -85,7 +85,7 @@ Given("I have a valid email") do
 end
 
 When("I enter a valid email") do
-  @contact_us.fill_field_with_text("newsletterEmail",@email_bak.email_address)
+  fill_field_with_text("newsletterEmail",@email_bak.email_address)
 end
 
 Then("I receive a confirmation message") do
@@ -105,7 +105,7 @@ When("I enter my message") do
 end
 
 When("I successfully send the message") do
-  @contact_us.click_button_by_text "Send message"
+  click_button_by_text "Send message"
 end
 
 Then("I see a div with a confirmation message") do

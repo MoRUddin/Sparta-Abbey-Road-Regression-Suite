@@ -19,16 +19,16 @@ When('I search "Abbey Road Studios"') do
 end
 
 When('I click the link "Visit Abbey Road Studios"') do
-  @google.click_search_result "Abbey Road Studios"
+  click_link_by_text "Abbey Road Studios"
 end
 
 Then("I am redirected to the Live Feed Page") do
-  expect(@live_feed.this_url).to eq "https://www.abbeyroad.com/crossing"
+  expect(get_url).to eq "https://www.abbeyroad.com/crossing"
 end
 
 Then("I am redirected to the Stage Live Feed Page") do
   @live_feed.get_time_tabs # Alternative to sleep
-  expect(@live_feed.this_url).to eq "https://stage.abbeyroad.com/crossing"
+  expect(get_url).to eq "https://stage.abbeyroad.com/crossing"
 end
 
 Given("I am on the Live Feed Page") do
@@ -61,11 +61,11 @@ When('I click "Visit Us"') do
 end
 
 When('I click "Abbey Road Studios: The Most Famous Recording Studios"') do
-  @google.click_search_result "Abbey Road Studios: The Most Famous Recording Studios"
+  click_link_by_text "Abbey Road Studios: The Most Famous Recording Studios"
 end
 
 Then("I am redirected to the Homepage") do
-  expect(@live_feed.this_url).to eq "https://www.abbeyroad.com/"
+  expect(get_url).to eq "https://www.abbeyroad.com/"
 end
 
 Then("that tab turn red") do
@@ -81,7 +81,7 @@ Then("the images are in chronological order") do
 end
 
 When("I click the share button") do
-  @live_feed.click_button_text "Share post"
+  click_button_by_text "Share post"
 end
 
 Then("a modal appears to share the image") do
@@ -111,7 +111,7 @@ Given("I fill in the email to") do
 end
 
 Given("I click send") do
-  @live_feed.click_button_text "Send"
+  click_button_by_text "Send"
 end
 
 Then("I receive an email") do
@@ -121,7 +121,7 @@ Then("I receive an email") do
 end
 
 When("I click Post") do
-  @live_feed.click_button_text "Post"
+  click_button_by_text "Post"
 end
 
 Then("I am shown an error modal") do

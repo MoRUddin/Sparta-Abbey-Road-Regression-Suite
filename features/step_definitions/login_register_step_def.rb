@@ -12,11 +12,11 @@ When("I enter all correct and valid details,") do
 end
 
 When("I click signup,") do
-  @registration.click_button_by_text "Register"
+  click_button_by_text "Register"
 end
 
 Then("I am redirected to the project dashboard.") do
-  expect(@registration.get_url).to eq "https://stagemy.abbeyroad.com/projects"
+  expect(get_url).to eq "https://stagemy.abbeyroad.com/projects"
 end
 
 Then("I recieve a verification email") do
@@ -35,12 +35,12 @@ When("I click my username") do
 end
 
 When("I click logout") do
-  @registration.click_button_by_text "Log out"
+  click_button_by_text "Log out"
 end
 
 Then("I am redirected to the login page") do
   sleep 2
-  expect(@registration.get_url).to include "https://stagemy.abbeyroad.com/account/login"
+  expect(get_url).to include "https://stagemy.abbeyroad.com/account/login"
 end
 
 When("I access the email and account management") do
@@ -49,11 +49,11 @@ end
 
 When("I change username") do
   @random_name = Faker::Name.name
-  @project_dashboard.fill_field_with_text("Name",@random_name)
+  fill_field_with_text("Name",@random_name)
 end
 
 When("I click confirm") do
-  @project_dashboard.click_button_by_text("Save changes")
+  click_button_by_text("Save changes")
 end
 
 Then("my details should be changed") do

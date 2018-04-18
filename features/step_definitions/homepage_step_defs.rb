@@ -17,7 +17,7 @@ end
 
 Then("I am redirected to online mixing") do
   sleep 1
-  expect(@homepage.get_url).to eq "https://stage.abbeyroad.com/online-mixing"
+  expect(get_url).to eq "https://stage.abbeyroad.com/online-mixing"
 end
 
 When('I click "online mastering"') do
@@ -26,7 +26,7 @@ end
 
 Then("I am redirected to online mastering") do
   sleep 1
-  expect(@homepage.get_url).to eq "https://stage.abbeyroad.com/online-mastering"
+  expect(get_url).to eq "https://stage.abbeyroad.com/online-mastering"
 end
 
 Then("I can view their twitter feed") do

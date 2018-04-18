@@ -36,12 +36,6 @@ class ProjectDashboard
   HELP_TAB = '//*[@id="holder"]/main/div/div[2]/div/div[2]/ul/li[4]/a'
   SHIPPING_CHECKBOX_XPATH = '//*[@id="holder"]/main/div/div[2]/div/div[2]/div/div[1]/div[3]/div[1]/div/div'
 
-  def click_button_by_text button_text
-    click_button button_text
-  end
-  def click_link_by_text link_text
-    click_link link_text
-  end
   def visit_projects
     visit(PROJECTS_URL)
   end
@@ -86,9 +80,6 @@ class ProjectDashboard
   def click_track_link
     find_track_link.click
   end
-  def get_url
-    current_url
-  end
   def click_settings_tab
     find(:xpath, SETTINGS_TAB_XPATH).click
   end
@@ -99,7 +90,7 @@ class ProjectDashboard
     find(SETTINGS_NAME_FIELD)["value"]
   end
   def click_checkout_project
-    find(PROJECT_DISPLAY).find("a").click #change to last non purchased project
+    find(PROJECT_DISPLAY).find("a").click
   end
   def fill_in_billing_details name, address1, address2, city, county, postcode
     within(:xpath, BILLING_FORM_SCOPE) do
@@ -176,30 +167,24 @@ class ProjectDashboard
   def click_confirm_ddpi
     all(DDPI_CHECKBOX).last.click
   end
-
   def click_help_tab
     find(:xpath, HELP_TAB).click
   end
-
   def check_audio_checkbox_second_file
     find(:xpath, AUDIO_CHECKBOX_SECOND_FILE).click
   end
-
   def add_lp_to_basket
     find(:xpath,LP_XPATH_BUTTON).click
   end
-
   def drag_to_side_b
     source = page.find(:xpath,'//*[@id="side-1"]/li[2]')
     target = page.find('#side-2')
     source.drag_to(target)
   end
-
   def check_lp_added_to_basket
     find(:xpath, CHECK_ADDED_LP_TO_BASKET_XPATH)["class"]
   end
   def click_shipping_as_billing_checkbox
     find(:xpath,SHIPPING_CHECKBOX_XPATH).click
   end
-
 end

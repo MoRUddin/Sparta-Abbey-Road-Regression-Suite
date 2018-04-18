@@ -1,5 +1,20 @@
 
 module AbbeyRoadStage
+  def get_url
+    current_url
+  end
+  def visit_url(url)
+    visit(url)
+  end
+  def click_button_by_text button_text
+    click_button(button_text)
+  end
+  def click_link_by_text link_text
+    click_link link_text
+  end
+  def fill_field_with_text(field_selector,text)
+    fill_in(field_selector,with: text)
+  end
 
   def google_search
     GoogleSearch.new

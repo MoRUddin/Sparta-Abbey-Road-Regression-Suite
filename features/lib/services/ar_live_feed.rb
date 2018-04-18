@@ -14,9 +14,6 @@ class AbbeyRoadLiveFeed
   EMOJI_FIELD_CLASS = ".emojionearea-editor"
   EMAIL_FIELD_CLASS = "input.form-control"
 
-  def this_url
-    current_url
-  end
   def convert_to_time time_string
     DateTime.parse(time_string)
   end
@@ -61,9 +58,6 @@ class AbbeyRoadLiveFeed
       end
     end
     return true
-  end
-  def click_button_text button_text
-    click_button(button_text)
   end
   def click_envelope
     find(ENVELOPE_ICON).click
