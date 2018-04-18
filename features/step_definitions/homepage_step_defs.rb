@@ -32,3 +32,9 @@ end
 Then("I can view their twitter feed") do
   expect(@homepage.check_for_twitter_embedded).to eq true
 end
+
+Then("I can view their youtube videos") do
+  # expect(@hompage.)
+  # expect(@hompage.check_for_youtube_embedded).to eq true
+  @hompage.check_for_youtube_embedded
+end

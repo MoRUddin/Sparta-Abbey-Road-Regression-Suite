@@ -14,3 +14,7 @@ Feature: Homepage
   Scenario: As I user I should see twitter embedded on the Homepage
     Given I am on Abbey Road's homepage
     Then I can view their twitter feed
+
+  Scenario: As I user I should see 3 youtube videos on the Studio 1 Page
+    Given I am on the studio 1 page
+    Then I can view their youtube videos

@@ -22,7 +22,6 @@ module AbbeyRoadStage
   def ar_registration
     RegisterPage.new
   end
-
   def contact_us
     ContactUs.new
   end

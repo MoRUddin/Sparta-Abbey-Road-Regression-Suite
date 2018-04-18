@@ -30,4 +30,7 @@ class AbbeyRoadHomepage
   def check_for_twitter_embedded
     find(EMBEDDED_TWITTER).visible?
   end
+  def check_for_youtube_embedded
+    puts('iframe').native.attribute('outerHTML')
+  end
 end
