@@ -29,6 +29,7 @@ To clone the repository run the command `git clone` [the HTTP or SSH](https://gi
 To install all the Ruby Gems required for this suite run the command ` bundle` within the terminal. This will install all the required gems specified within the 'Gemfile'.
 
 ## Additional setup steps
+Create an **assets** folder within the **features** folder if it does not already exist. Within this new folder create a text file `card_number.txt` with the value of the payment card to be used in the test.
 ### Windows
 1. The project uses Cucumber, which in turn uses Selenium Webdriver, which in turn uses ChromeDriver. At the time of this suite's delivery Chrome is at version 65. The project is using Chromedriver v2.37. You can find the latest release [here](https://sites.google.com/a/chromium.org/chromedriver/downloads)
 2. Move ChromeDriver to either this project's location or to one of your choice. Then right-click on the file, go to **Properties**, and copy the **Location** file path
@@ -40,7 +41,9 @@ To install all the Ruby Gems required for this suite run the command ` bundle` w
 Open the program, and within the console while in the Sparta-Abbey-Road-Regression-Suite folder run the command `<browser name>=true cucumber` to see the tests running. Running the command `cucumber` alone, will launch the tests in chrome.
 Within the terminal window, it will show all the scenarios that are running and whether they have passed.
 
-To create a report detailing the tests, you have to run the command `cucumber -f html -o /abbey-road-automation-test<DDMMYYYY><HHMM>.html`. This will create a HTML file that can be viewed on any browser. All passing tests are highlighted in green, and failing ones in red. The failing tests can be expanded upon to get more details about what result the test was expecting and what result it got. To get other formats for the reports, replace the "HTML" with "JSON". the datetime stamp is used to differentiate reports, if the name is the same it will overwrite a previous report.
+To create a report detailing the tests, you have to run the command `cucumber -f html -o reports/abbey-road-automation-test<DDMMYYYY><HHMM>.html`. This will create a HTML file that can be viewed on any browser. All passing tests are highlighted in green, and failing ones in red. The failing tests can be expanded upon to get more details about what result the test was expecting and what result it got. To get other formats for the reports, replace the "HTML" with "JSON". the datetime stamp is used to differentiate reports, if the name is the same it will overwrite a previous report.
+
+Example: `cucumber -f html -o reports/abbey-road-automation-test<19042018><1330>.html`
 
 Within the "features" folder, there are a number of feature files. These files contain the scenarios that Cucumber uses to create tests and each scenario has been linked to a user story. The stories have been sorted into different feature files depending on what they pertain to. This is the order in which the tests will be run in.
 
