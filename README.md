@@ -10,6 +10,7 @@
 * The latest version of Google Chrome installed
 * The latest version of Firefox installed
 * A stable internet connection
+
 ### Mac
 * MAC OSX High Sierra
 * Ruby 5.1.5
@@ -23,14 +24,19 @@
 The aim of this project was to create an automation regression test suite for Abbey Road Studios. This was so that when updates to their site are made, this suite can be ran to regression test the rest of the site.
 
 ## How to install
-
-To clone the repository run the command `git clone` within the terminal with this: <br>
- `git@github.com:MoRUddin/Sparta-Abbey-Road-Regression-Suite.git`
+To clone the repository run the command `git clone git@github.com:MoRUddin/Sparta-Abbey-Road-Regression-Suite.git` within the terminal.
 
 To install all the Ruby Gems required for this suite run the command ` bundle` within the terminal. This will install all the required gems specified within the 'Gemfile'.
 
-##### Running the software
+## Additional setup steps
+### Windows
+1. The project uses Cucumber, which in turn uses Selenium Webdriver, which in turn uses ChromeDriver. At the time of this suite's delivery Chrome is at version 65. The project is using Chromedriver v2.37. You can find the latest release [here](https://sites.google.com/a/chromium.org/chromedriver/downloads)
+2. Move ChromeDriver to either this project's location or to one of your choice. Then right-click on the file, go to **Properties**, and copy the **Location** file path
+3. Head to **Control Panel > Sysytem and Security > System** and **Advanced Systems Settings** (it might ask you for an admin password).
+4. Open **Environment Variables**. In **System Variables**, open **Path** and click **New**. Paste in the path you copied with the ChromeDriver location.
+5. Restart your terminal, and head back to the project directory. Now if you run `cucumber` the project should run!
 
+## Running the software
 Open the program, and within the console while in the Sparta-Abbey-Road-Regression-Suite folder run the command `<browser name>=true cucumber` to see the tests running.
 Within the terminal window, it will show all the scenarios that are running and whether they have passed.
 
@@ -56,38 +62,40 @@ Another risk associated with the tests is that when ***changing webpage titles**
 * Then: The expected result of the test (The Assertion)
 
 ###### As a User, I can upload my tracks as .wav files
-Given: I am logged in
-  And: I am on a new project
-When: I click upload
-  And: I upload a valid wav file
-Then: the track is added to my list of tracks
+* Given: I am logged in
+* And: I am on a new project
+* When: I click upload
+* And: I upload a valid wav file
+* Then: the track is added to my list of tracks
 
 ###### As a logged in User I can upload my project tracks in .wav so that I can start my project.
-Given: I have started my online mixing project
-When: I upload my .wav files
-Then: I can see my uploaded project files
+* Given: I have started my online mixing project
+* When: I upload my .wav files
+* Then: I can see my uploaded project files
 
 ###### As a logged in User, I can upload my reference files in .wav, with a 96Khz/24bit sampling rate
-Given: I have uploaded my project files And: I am on the reference file upload page When: I upload my wav files with the correct sampling rate Then: I can see my uploaded reference files
+* Given: I have uploaded my project files And: I am on the reference file upload page
+* When: I upload my wav files with the correct sampling rate
+* Then: I can see my uploaded reference files
 
 ###### As a User, I can go to the settings tab to manage linked logins.
-Given: I am logged in
-  And: I am on the settings tab
-  And: I click manage accounts
-When: I click Facebook
-  And: I log in with my Facebook details and click enter
-Then: I am taken back to the manage accounts page with a linked Facebook
+* Given: I am logged in
+* And: I am on the settings tab
+* And: I click manage accounts
+* When: I click Facebook
+* And: I log in with my Facebook details and click enter
+* Then: I am taken back to the manage accounts page with a linked Facebook
 
 ###### As a registered User with a connected Facebook account, I can login in with Facebook.
-Given: I am a registered user,
-  And: I have a connected Facebook
-  And: I am on the login page,
-When: I click login with Facebook,
-Then: I am redirected to the Abbey Road website.
+* Given: I am a registered user,
+* And: I have a connected Facebook
+* And: I am on the login page,
+* When: I click login with Facebook,
+* Then: I am redirected to the Abbey Road website.
 
 ###### As an unregistered User, I can register with my Facebook account
-Given: I have a Facebook account
-  And: I am on the register page
-When: I click login with Facebook,
-  And: I confirm my Facebook,
-Then: I am redirected to the Abbey Road website.
+* Given: I have a Facebook account
+* And: I am on the register page
+* When: I click login with Facebook,
+* And: I confirm my Facebook,
+* Then: I am redirected to the Abbey Road website.

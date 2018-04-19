@@ -29,6 +29,11 @@ Capybara.configure do |config|
     Capybara.register_driver :safari do |app|
       Capybara::Selenium::Driver.new(app, :browser => :safari)
     end
+  else
+    Capybara.default_driver = :chrome
+    Capybara.register_driver :chrome do |app|
+      Capybara::Selenium::Driver.new(app, :browser => :chrome)
+    end
   end
 end
 
